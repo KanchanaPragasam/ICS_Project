@@ -914,31 +914,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Pyramid Card Section after slider -->
     <!-- Stats Section (below card grid) -->
-    <div class="stats-section">
-      <div class="stats-header">
-        <h2>Our AI &amp; Data Achievements</h2>
-        <p>Delivering excellence in AI, ML, and Data Analytics</p>
-      </div>
-      <div class="stats-row">
-        <div class="stats-col">
-          <div class="stats-number">120+</div>
-          <div class="stats-label">AI &amp; Data Specialists</div>
-        </div>
-        <div class="stats-col">
-          <div class="stats-number">175+</div>
-          <div class="stats-label">AI/ML Models</div>
-        </div>
-        <div class="stats-col">
-          <div class="stats-number">345+</div>
-          <div class="stats-label">Data Analytics Dashboards</div>
-        </div>
-        <div class="stats-col">
-          <div class="stats-number">1630+</div>
-          <div class="stats-label">Projects Delivered</div>
-        </div>
-      </div>
-    </div>
-  
+    <script>
+// Animated count up for all .stats-number elements when visible
+(function() {
+  const targets = [120, 175, 345, 1630];
+  const els = document.querySelectorAll('.stats-number');
+  let counted = [false, false, false, false];
+
+  function countUp(idx, el, maxCount) {
+    let count = 0;
+    const step = Math.ceil(maxCount / 60); // ~1s duration
+    const interval = setInterval(() => {
+      count += step;
+      if (count >= maxCount) {
+        el.textContent = maxCount + '+';
+        clearInterval(interval);
+      } else {
+        el.textContent = count;
+      }
+    }, 16);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        els.forEach((el, idx) => {
+          if (!counted[idx]) {
+            countUp(idx, el, targets[idx]);
+            counted[idx] = true;
+          }
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  els.forEach(el => observer.observe(el));
+})();
+</script>
 </body>
 
 </html>
