@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="icon" href="images/fav.ico" type="image/x-icon">
+    <!-- Angular translate --->
+    <script src="angular/angular1.6.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular-cookies.min.js"></script>
+    <script data-require="angular-translate@*" data-semver="2.5.0"
+        src="https://cdn.rawgit.com/angular-translate/bower-angular-translate/2.5.0/angular-translate.js"></script>
+    <script
+        src="https://cdn.rawgit.com/angular-translate/bower-angular-translate-storage-cookie/2.18.1/angular-translate-storage-cookie.js"></script>
+    <script
+        src="https://cdn.rawgit.com/angular-translate/bower-angular-translate-storage-local/2.18.1/angular-translate-storage-local.js"></script>
+    <script src="angular/translation.js"></script>
+    <script src="angular/script.js"></script>
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.7.0/css/flag-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- SEO tags -->
+    <title>Inspiration Consultant Service | Contact Us</title>
+
+    <meta name=description
+        content="Partner with Information Consultant Service Inc to future-proof your business with innovative, cost-effective IT solutions">
+    <!-- here replace the original url -->
+    <link rel="canonical" href="C:\Users\Kanchana Pragasam\TCL\Angular\public_html\public_html\contact-us.html">
+    <meta name="robots" content="index, follow">
+    <!-- here replace the original url -->
+    <meta property="og:url" content="C:\Users\Kanchana Pragasam\TCL\Angular\public_html\public_html\contact-us.html">
+    <meta property="og:description"
+        content="Partner with Information Consultant Service Inc to future-proof your business with innovative, cost-effective IT solutions">
+    <meta property="og:image" content="images/contact.jpg">
+
+
+</head>
+
+<body ng-controller="translateController">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png"
+                        alt="Inspiration Consultancy Service Company logo - Global IT services provider" />
+                </a> -->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div>
+                    <ul class="nav navbar-nav language">
+                        <li class="" id="eng">
+                            <a href="#" ng-click="changeLanguage('en')">EN</a>
+                        </li>
+                        <li> |</li>
+                        <li id="frn">
+                            <a href="#" ng-click="changeLanguage('fr')">FR</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav mainmenu">
+                        <li>
+                            <a href="index.html">{{'Home' | translate}}</a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a class="dropdown-toggle" role="button">
+                                {{'Services' | translate}}
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="services/service-assurance.html">Service Assurance</a></li>
+                                <li><a href="services/app-development-maintenance.html">App Development Maintenance</a>
+                                </li>
+                                <li><a href="services/professional-services-it-consulting.html">Professional Services
+                                        and
+                                        IT
+                                        Consulting</a></li>
+                                <li><a href="services/mobile-app-development.html">Mobile App Development</a></li>
+                                <li><a href="services/web-app-development.html">Web App Development</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="careers.html">{{'Careers' | translate}}</a>
+                        </li>
+                        <li class="active">
+                            <a href="contact-us.html">{{'Contact' | translate}}</a>
+                        </li>
+                        <li>
+                            <a href="about-us.html">{{'About us' | translate}}</a>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- HEADER END -->
+    <!-- Banner Section Starts -->
+    <div style="background-image: url(/images/Blue_banner2_freepik.jpg); " >
+
+
+        <img src="images/logo.png" class="carousel-logo wow flipInX"
+            alt="Inspiration Consultancy Service Company logo - Global IT services provider"
+            title="Inspiration Consultant Service logo" />
+        <section class="bannerSection contactus wow fadeInLeft">
+
+            <!-- <h3>{{'Contact Us' | translate}}</h3> -->
+
+        </section>
+    </div>
+
+
+
+
+    <!-- Banner Section Ends -->
+    <section class="section get_in_touch  lightgray">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>{{'Get in touch:' | translate}}</h3>
+                    <div id="response"></div>
+                    <form action="mail.php" id="mailform">
+                        <div class="form-group">
+                            <input name="name" class="form-control" placeholder="{{'Name' | translate}}">
+                        </div>
+                        <div class="form-group">
+                            <input name="phone" class="form-control" placeholder="{{'Phonenumber' | translate}}">
+                        </div>
+                        <div class="form-group">
+                            <input name="email" class="form-control" placeholder="{{'Email' | translate}}">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="{{'Message' | translate}}"
+                                rows="4"></textarea>
+
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-sm btn-primary">{{'Submit' | translate}}</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="col-sm-6 mt-sm-30">
+                    <h3>{{'Headoffice:' | translate}}</h3>
+                    <p>
+                        <span>Inspiration Consultant Service Inc. (ICS)</span>
+                        <span>1208-1280 Rue Saint Marc,</span>
+                        <span>Montreal, H3H 2G1,</span>
+                        <span>Quebec, Canada.</span>
+                    </p>
+                    
+
+                    <div class="mail_area mt-sm-30">
+                        <span>
+                            <img src="images/contact_mail.png" class="img-responsive">
+
+                        </span>
+                        <p><span>{{'Please email us your requirements to' | translate}}</span>
+                            <span><a href="#">inspire.it@inspirationcs.ca </a>{{' for quotes.' | translate}}</span>
+                        </p>
+                    </div> -->
+            </div>
+        </div>
+        <!-- <div class="mapArea">
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <a href="https://maps.app.goo.gl/4QFQ1Z6dShikKnMZA" target="_blank"><img src="images/map.jpg"
+                                class="img-responsive"></a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- Office Locations Carousel -->
+        <section class="section office-carousel lightgray">
+
+            <div class="container">
+                <h3 class="text-center">Our Global Offices</h3>
+                <div class="carousel-wrapper">
+                    <div class="carousel-item">
+
+                        <div>
+                            <span class="fi fi-ca flag-xl"></span>
+
+
+                        </div>
+                        <h4>Canada Office</h4>
+                        <p><strong>Inspiration Consultants Services Inc.</strong></p>
+                        <p>1208-1280 Rue Saint Marc,
+                            Montreal, H3H 2G1,
+                            Quebec, Canada.</p>
+                        <p><strong><i class="fa-solid fa-envelope"></i></strong> sales@icstech.ca</p>
+                    </div>
+                    <div class="carousel-item">
+                        <span class="fi fi-in flag-xl"></span>
+                        <h4>India Office</h4>
+                        <p><strong>Missionmind IT Services Private Limited</strong></p>
+                        <p>8, Mariyamman Koil Street,<br>
+                            Menambedu, Ambattur, Chennai,<br>
+                            Tamil Nadu 600053, India</p>
+                        <p><strong><i class="fa-solid fa-phone flag"></i></strong> +91 44 2686 2365</p>
+                        <p><strong><i class="fa-solid fa-envelope"></i></strong> info@missionmindtech.com</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <span class="fi fi-us flag-xl"></span>
+                        <h4>US Office</h4>
+                        <p><strong>Missionmind IT Services LLC</strong></p>
+                        <p>11745 Stoney Peak Dr, Unit 207,<br>
+                            San Diego, California, 92128, USA</p>
+                        <p><strong><i class="fa-solid fa-envelope"></i></strong> info@missionmindtech.com</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+
+
+
+
+    <footer class="contact">
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="footer_bottom_content">
+                    <p>{{' Copyright ' | translate }}&copy; 2024 inspirationcs.ca {{'All Rights Reserved' | translate}}
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="images/f.png" class="img-responsive"
+                                    alt="Follow Inspiration Consultants Service on Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/g.png" class="img-responsive"
+                                    alt="Find Inspiration Consultants Service on Google Business">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://in.linkedin.com/company/ics-inc-canada" target="_blank">
+                                <img src="images/in.png" class="img-responsive"
+                                    alt="Connect with Inspiration  Consultants Service on LinkedIn">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/t.png" class="img-responsive"
+                                    alt="Follow Inspiration Consultants Service on Twitter for updates">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log('contact');
+            console.log(localStorage.getItem('NG_TRANSLATE_LANG_KEY'));
+            if (localStorage.getItem('NG_TRANSLATE_LANG_KEY') == 'en') {
+                $('#eng').addClass('active');
+            } else {
+                $('#frn').addClass('active');
+            }
+
+            $('#mailform').submit(function (event) {
+                $('#response').html("<b style='color: black; '>{{'Loading response...' | translate}}</b>");
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'mail.php',
+                    data: $(this).serialize()
+                })
+                    .done(function (data) {
+                        $('#response').html(data);
+                        $("#mailform")[0].reset();
+                    })
+                    .fail(function () {
+                        console.log("{{'Posting failed.' | translate}}");
+                    });
+
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('.carousel').carousel({
+                interval: 5000
+            })
+        })
+
+        new WOW().init();
+
+    </script>
+
+
+</body>
+
+</html>
