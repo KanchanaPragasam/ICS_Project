@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.7.0/css/flag-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+
+    <!-- Hero Section -->
+    <section class="fsd-hero">
+      <div class="fsd-hero-bg"></div>
+      <div class="fsd-hero-content">
+        <h1>Full Stack Development Services</h1>
+        <p>Accelerate your digital transformation with robust, scalable, and innovative full stack solutions.</p>
+      </div>
+    </section>
+
+    <!-- Interactive Services Section -->
+    <section class="fsd-services-section">
+      <div class="fsd-services-container">
+        <div class="fsd-services-list">
+          <ul id="fsd-service-list">
+            <li class="active" data-service="frontend"><span class="fsd-icon"><i class="fa-solid fa-laptop-code"></i></span> Front-end development</li>
+            <li data-service="backend"><span class="fsd-icon"><i class="fa-solid fa-server"></i></span> Back-end development</li>
+            <li data-service="ai"><span class="fsd-icon"><i class="fa-solid fa-brain"></i></span> AI/ML integration</li>
+            <li data-service="api"><span class="fsd-icon"><i class="fa-solid fa-plug"></i></span> API integration</li>
+            <li data-service="db"><span class="fsd-icon"><i class="fa-solid fa-database"></i></span> Database configuration</li>
+            <li data-service="mean"><span class="fsd-icon"><i class="fa-brands fa-node-js"></i></span> MEAN stack</li>
+            <li data-service="devops"><span class="fsd-icon"><i class="fa-solid fa-gears"></i></span> DevOps</li>
+            <li data-service="uiux"><span class="fsd-icon"><i class="fa-solid fa-palette"></i></span> UI/UX design</li>
+          </ul>
+        </div>
+        <div class="fsd-service-panel" id="fsd-service-panel">
+          <!-- Dynamic content will be injected here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="fsd-cta-section">
+      <div class="fsd-cta-content">
+        <h2>Looking for end-to-end full stack development tailored to your business goals?</h2>
+        <p>Our expert team delivers scalable, secure, and high-performance solutions for startups, enterprises, and everything in between.</p>
+        <div class="fsd-cta-icons">
+          <span><i class="fa-solid fa-rocket"></i></span>
+          <span><i class="fa-solid fa-shield-halved"></i></span>
+          <span><i class="fa-solid fa-users"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline/Process Section -->
+    <section class="fsd-process-section">
+      <h2 class="fsd-process-title">Full Stack Development Process</h2>
+      <div class="fsd-timeline">
+        <div class="fsd-timeline-step">
+          <div class="fsd-step-number">01</div>
+          <div class="fsd-step-content">
+            <div class="fsd-step-title">Discovery</div>
+            <div class="fsd-step-desc">We analyze your requirements, goals, and challenges to craft a tailored solution roadmap.</div>
+          </div>
+        </div>
+        <div class="fsd-timeline-step">
+          <div class="fsd-step-number">02</div>
+          <div class="fsd-step-content">
+            <div class="fsd-step-title">Finalize the design</div>
+            <div class="fsd-step-desc">Our UI/UX experts create wireframes and prototypes for a seamless user experience.</div>
+          </div>
+        </div>
+        <div class="fsd-timeline-step">
+          <div class="fsd-step-number">03</div>
+          <div class="fsd-step-content">
+            <div class="fsd-step-title">Development</div>
+            <div class="fsd-step-desc">Agile development of front-end, back-end, and integrations using modern tech stacks.</div>
+          </div>
+        </div>
+        <div class="fsd-timeline-step">
+          <div class="fsd-step-number">04</div>
+          <div class="fsd-step-content">
+            <div class="fsd-step-title">Integration and testing</div>
+            <div class="fsd-step-desc">Comprehensive QA, integration, and user acceptance testing for flawless performance.</div>
+          </div>
+        </div>
+        <div class="fsd-timeline-step">
+          <div class="fsd-step-number">05</div>
+          <div class="fsd-step-content">
+            <div class="fsd-step-title">Deployment</div>
+            <div class="fsd-step-desc">Seamless deployment to your preferred environment with zero downtime.</div>
+          </div>
+        </div>
+        <div class="fsd-timeline-step">
+          <div class="fsd-step-number">06</div>
+          <div class="fsd-step-content">
+            <div class="fsd-step-title">Monitoring and support</div>
+            <div class="fsd-step-desc">Continuous monitoring, maintenance, and support to ensure long-term success.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Service content data
+      const serviceContent = {
+        frontend: {
+          title: 'Front-end Development',
+          desc: 'We build responsive, interactive, and visually stunning user interfaces using React, Angular, Vue, and more. Our front-end solutions ensure seamless user experiences across all devices.',
+          img: 'https://cdn-icons-png.flaticon.com/512/2721/2721297.png'
+        },
+        backend: {
+          title: 'Back-end Development',
+          desc: 'Robust, scalable, and secure server-side solutions using Node.js, Python, Java, .NET, and more. We architect APIs, business logic, and databases for high performance.',
+          img: 'https://cdn-icons-png.flaticon.com/512/2721/2721298.png'
+        },
+        ai: {
+          title: 'AI/ML Integration',
+          desc: 'Integrate artificial intelligence and machine learning into your applications for automation, analytics, and smarter decision-making.',
+          img: 'https://cdn-icons-png.flaticon.com/512/2721/2721300.png'
+        },
+        api: {
+          title: 'API Integration',
+          desc: 'Seamlessly connect your systems and third-party services with robust, secure API integrations and custom middleware.',
+          img: 'https://cdn-icons-png.flaticon.com/512/2721/2721301.png'
+        },
+        db: {
+          title: 'Database Configuration',
+          desc: 'Design, configure, and optimize SQL and NoSQL databases for reliability, speed, and scalability.',
+          img: 'https://cdn-icons-png.flaticon.com/512/2721/2721302.png'
+        },
+        mean: {
+          title: 'MEAN Stack',
+          desc: 'Full-stack JavaScript development using MongoDB, Express, Angular, and Node.js for rapid, scalable solutions.',
+          img: 'https://cdn-icons-png.flaticon.com/512/919/919825.png'
+        },
+        devops: {
+          title: 'DevOps',
+          desc: 'Automate, monitor, and optimize your development lifecycle with CI/CD, cloud, and infrastructure as code.',
+          img: 'https://cdn-icons-png.flaticon.com/512/2721/2721303.png'
+        },
+        uiux: {
+          title: 'UI/UX Design',
+          desc: 'Crafting intuitive, beautiful, and user-centric designs that drive engagement and satisfaction.',
+          img: 'https://cdn-icons-png.flaticon.com/512/2721/2721304.png'
+        }
+      };
+
+      function renderServicePanel(key) {
+        const data = serviceContent[key];
+        const panel = document.getElementById('fsd-service-panel');
+        panel.innerHTML = `
+          <div class="fsd-panel-card">
+            <img src="${data.img}" alt="${data.title}" class="fsd-panel-img" />
+            <div class="fsd-panel-info">
+              <h3>${data.title}</h3>
+              <p>${data.desc}</p>
+            </div>
+          </div>
+        `;
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Initial render
+        renderServicePanel('frontend');
+        // List item click
+        document.querySelectorAll('#fsd-service-list li').forEach(li => {
+          li.addEventListener('click', function () {
+            document.querySelectorAll('#fsd-service-list li').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            renderServicePanel(this.getAttribute('data-service'));
+          });
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="/css/full-stack-development.css">
+
+  
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/countup.js"></script>
+    <script src="js/custom.js"></script>
+    <script>	$(document).ready(function () {
+            console.log('index');
+            console.log(localStorage.getItem('NG_TRANSLATE_LANG_KEY'));
+            if (localStorage.getItem('NG_TRANSLATE_LANG_KEY') == 'en') {
+                $('#eng').addClass('active');
+            } else {
+                $('#frn').addClass('active');
+            }
+            /*  $('.nav li a').click(function(e) {
+          
+                  $('.nav li.active').removeClass('active');
+          
+                  var $parent = $(this).parent();
+                  $parent.addClass('active');
+                  e.preventDefault();
+              });*/
+
+            $('#mailform').submit(function (event) { $('#response').html("<b style='color: white; '>{{'Loading response...' | translate}}</b>"); $.ajax({ type: 'POST', url: 'mail.php', data: $(this).serialize() }).done(function (data) { $('#response').html(data); $("#mailform")[0].reset(); }).fail(function () { console.log("{{'Posting failed.' | translate}}"); }); return false; });
+        });</script>
+
+    <script>
+        new WOW().init();
+        $(function () {
+            var i = 1;
+            var cunt = $('.own_carousel > .item').length;
+            sliding(i); var options = { useEasing: true, useGrouping: true, separator: '', decimal: '.', suffix: '+' }; var member = new CountUp('member', 0, 20, 0, 4, options); var projects = new CountUp('projects', 0, 25, 0, 4, options); var customers = new CountUp('customers', 0, 5, 0, 4, options); var experience = new CountUp('experience', 0, 10, 0, 4, options); var aniCount = 0; $(window).scroll(function () { countAnimation(); }); function countAnimation() { if ($('#member').hasClass('animated') && (aniCount == 0)) { aniCount++; setTimeout(() => { member.start(); }, 200); setTimeout(() => { projects.start(); }, 500); setTimeout(() => { customers.start(); }, 750); setTimeout(() => { experience.start(); }, 1000); } } setTimeout(() => { countAnimation(); }, 1000);
+            var timer = setInterval(function () {
+                i++;
+                if (i > cunt) {
+                    i = 1;
+                }
+                sliding(i);
+            }, 5000);
+            $('.own_carousel .controls .left').click(function () {
+                window.clearInterval(timer);
+                i--;
+                if (i == 0) {
+                    i = 4;
+                }
+                console.log(i);
+                sliding(i);
+                timer = setInterval(function () {
+                    i++;
+                    if (i > cunt) {
+                        i = 1;
+                    }
+                    sliding(i);
+                }, 5000);
+            })
+            $('.own_carousel .controls .right').click(function () {
+                window.clearInterval(timer);
+                i++;
+                if (i > cunt) {
+                    i = 1;
+                }
+                sliding(i);
+                timer = setInterval(function () {
+                    i++;
+                    if (i > cunt) {
+                        i = 1;
+                    }
+                    sliding(i);
+                }, 5000);
+            })
+
+            function sliding(index) {
+                var $items = $('.own_carousel > .item');
+                $items.removeClass('active');
+                $items.eq(index - 1).addClass('active');
+                $items.eq(index - 1).animate({ 'opacity': '1' }, 500);
+                $items.not(':eq(' + (index - 1) + ')').animate({ 'opacity': '0' }, 0);
+
+                $items.eq(index - 1).find('.bgs').each(function () {
+                    const $el = $(this);
+                    $el.removeClass('animated fadeInLeft'); // Remove animation class
+                    void this.offsetWidth; // Force reflow to reset animation
+                    $el.addClass('animated fadeInLeft'); // Add again to re-trigger
+                });
+
+                // Re-animate text elements
+                $items.eq(index - 1).find('.carousel-caption').each(function () {
+                    const $el = $(this);
+                    $el.removeClass('animated fadeInRight');
+                    void this.offsetWidth;
+                    $el.addClass('animated fadeInRight');
+                });
+
+            }
+
+        }
+        )
+    </script>
+
+
+
+
+    <!-- <script>
+        const navbar = document.querySelector('nav');
+        const logo = document.querySelector('.logo img');
+
+        const lightLogo = 'images/logo_croped.png';         // Default logo
+        const darkLogo = 'images/logo_theme2_ICS.png';      // Dark/fixed logo
+
+        function updateLogo() {
+            if (navbar.classList.contains('fixed') || navbar.matches(':hover')) {
+                logo.src = darkLogo;
+            } else {
+                logo.src = lightLogo;
+            }
+        }
+
+        // Change logo on hover
+        navbar.addEventListener('mouseenter', updateLogo);
+        navbar.addEventListener('mouseleave', updateLogo);
+
+        // Change logo on scroll if .fixed class is toggled
+        window.addEventListener('scroll', updateLogo);
+
+        // Watch for class changes (like .fixed)
+        const observer = new MutationObserver(updateLogo);
+        observer.observe(navbar, { attributes: true, attributeFilter: ['class'] });
+    </script>
+    <script>
+        let lastScrollTop = 0;
+        const nav = document.querySelector("nav");
+
+        window.addEventListener("scroll", function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                nav.style.top = "-70px"; // move nav up and hide
+            } else {
+                // Scrolling up
+                nav.style.top = "0"; // bring nav back
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative scroll
+        });
+    </script> -->
+
+    <script>
+        const navbar = document.querySelector('nav');
+        const wrapper = document.querySelector('nav .wrapper');
+        const logo = document.querySelector('.logo img');
+
+        const lightLogo = 'images/logo_white1.png';        // Default logo
+        const darkLogo = 'images/original_logo.png';     // Hover/active logo
+
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop === 0) {
+                // At the top: default theme
+                navbar.classList.remove('hidden');
+                wrapper.classList.remove('hover');
+                logo.src = lightLogo;
+
+            } else if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                navbar.classList.add('hidden');
+                wrapper.classList.remove('hover');
+                logo.src = lightLogo;
+
+            } else if (scrollTop < lastScrollTop) {
+                // Scrolling up (but not at top)
+                navbar.classList.remove('hidden');
+                wrapper.classList.add('hover');
+                logo.src = darkLogo;
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // Ensure hover still works when mouse enters
+        wrapper.addEventListener('mouseenter', () => {
+            wrapper.classList.add('hover');
+            logo.src = darkLogo;
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop === 0) {
+                wrapper.classList.remove('hover');
+                logo.src = lightLogo;
+            } else {
+                wrapper.classList.add('hover');
+                logo.src = darkLogo;
+            }
+        });
+    </script>
+
+    <!-- Language selection highlight logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var en = document.querySelector('.language-wrapper #eng a');
+            var fr = document.querySelector('.language-wrapper #fr a');
+            function setLang(selected) {
+                if (selected === 'en') {
+                    en.classList.add('selected');
+                    fr.classList.remove('selected');
+                } else {
+                    fr.classList.add('selected');
+                    en.classList.remove('selected');
+                }
+            }
+            en.addEventListener('click', function (e) {
+                setLang('en');
+            });
+            fr.addEventListener('click', function (e) {
+                setLang('fr');
+            });
+            setLang('en'); // default
+        });
+    </script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Pyramid Card Section after slider -->
+    <!-- Stats Section (below card grid) -->
+    <script>
+        // Animated count up for all .stats-number elements when visible
+        (function () {
+            const targets = [120, 175, 345, 1630];
+            const els = document.querySelectorAll('.stats-number');
+            let counted = [false, false, false, false];
+
+            function countUp(idx, el, maxCount) {
+                let count = 0;
+                const step = Math.ceil(maxCount / 60); // ~1s duration
+                const interval = setInterval(() => {
+                    count += step;
+                    if (count >= maxCount) {
+                        el.textContent = maxCount + '+';
+                        clearInterval(interval);
+                    } else {
+                        el.textContent = count;
+                    }
+                }, 16);
+            }
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        els.forEach((el, idx) => {
+                            if (!counted[idx]) {
+                                countUp(idx, el, targets[idx]);
+                                counted[idx] = true;
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            els.forEach(el => observer.observe(el));
+        })();
+    </script>
+
+</body>
+
+</html>
