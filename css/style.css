@@ -1,3 +1,926 @@
+/* --- Interactive Timeline & Accordion for Oracle UA Custom Dev --- */
+.oracle-ua-timeline {
+   
+    background: #fafdff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.06);
+    padding: 32px 0px 18px 0px;
+}
+
+.oracle-ua-timeline-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 18px;
+}
+
+.oracle-ua-timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 18px;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.oracle-ua-timeline-step .oracle-ua-timeline-icon {
+    font-size: 2rem;
+    color: #2196f3;
+    background: #eaf4fb;
+    border-radius: 50%;
+    padding: 12px;
+    margin-bottom: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.oracle-ua-timeline-step.active .oracle-ua-timeline-icon {
+    background: #2196f3;
+    color: #fff;
+}
+
+.oracle-ua-timeline-label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #08376B;
+    margin-bottom: 2px;
+}
+
+.oracle-ua-timeline-step.active .oracle-ua-timeline-label {
+    color: #2196f3;
+}
+
+.oracle-ua-timeline-arrow {
+    font-size: 1.3rem;
+    color: #b0c4d9;
+    margin: 0 0.5vw;
+}
+
+.oracle-ua-timeline-details {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.oracle-ua-timeline-detail {
+    display: none;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px 0 rgba(8, 55, 107, 0.05);
+    padding: 18px 24px;
+    min-width: 220px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.oracle-ua-timeline-detail.active {
+    display: block;
+}
+
+.oracle-ua-timeline-detail h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #08376B;
+    margin-bottom: 6px;
+}
+
+.oracle-ua-timeline-detail p {
+    font-size: 1rem;
+    color: #1a3556;
+    margin: 0;
+}
+
+.oracle-ua-accordion {
+    max-width: 900px;
+    margin: 0 auto 36px auto;
+    background: #fafdff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.06);
+    padding: 18px 18px 8px 18px;
+}
+
+.oracle-ua-accordion-item {
+    border-bottom: 1px solid #e0e7ef;
+}
+
+.oracle-ua-accordion-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 14px 0;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #08376B;
+    transition: color 0.2s;
+}
+
+.oracle-ua-accordion-header:hover {
+    color: #2196f3;
+}
+
+.oracle-ua-accordion-body {
+    display: none;
+    padding: 0 0 14px 38px;
+    font-size: 0.98rem;
+    color: #1a3556;
+    background: none;
+}
+
+.oracle-ua-accordion-body.active {
+    display: block;
+}
+
+.oracle-ua-custdev-install-icon {
+    font-size: 1.3rem;
+    color: #2196f3;
+    margin-right: 12px;
+}
+
+.oracle-ua-custdev-install-label {
+    font-weight: 600;
+    color: #08376B;
+}
+
+.oracle-ua-custdev-install-desc {
+    font-size: 0.97rem;
+    color: #1a3556;
+}
+
+@media (max-width: 900px) {
+
+    .oracle-ua-timeline,
+    .oracle-ua-accordion {
+        padding: 12px 2vw 8px 2vw;
+    }
+
+    .oracle-ua-timeline-detail {
+        min-width: 0;
+        max-width: 98vw;
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .oracle-ua-timeline-label,
+    .oracle-ua-custdev-install-label {
+        font-size: 0.97rem;
+    }
+
+    .oracle-ua-timeline-step {
+        padding: 0 6px;
+    }
+
+    .oracle-ua-timeline-detail {
+        font-size: 0.97rem;
+        padding: 8px 4px;
+    }
+
+    .oracle-ua-accordion-header {
+        font-size: 0.97rem;
+        padding: 10px 0;
+    }
+}
+
+/* --- ICS for Custom Development Section (oracle1.png) --- */
+.oracle-ua-custdev-section {
+    background: #f7fafd;
+    border-radius: 0 0 12px 12px;
+    max-width: 1200px;
+    margin: 0 auto 48px auto;
+    padding: 48px 24px 36px 24px;
+    box-shadow: 0 2px 16px 0 rgba(8, 55, 107, 0.04);
+    text-align: center;
+}
+
+.oracle-ua-custdev-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #08376B;
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+}
+
+.oracle-ua-custdev-subtitle {
+    font-size: 1.1rem;
+    color: #1a3556;
+    margin-bottom: 32px;
+}
+
+.oracle-ua-custdev-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.oracle-ua-custdev-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.07);
+    padding: 28px 18px 22px 18px;
+    min-width: 220px;
+    max-width: 260px;
+    flex: 1 1 220px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oracle-ua-custdev-icon {
+    font-size: 2.2rem;
+    color: #08376B;
+    margin-bottom: 12px;
+}
+
+.oracle-ua-custdev-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #08376B;
+    margin-bottom: 7px;
+}
+
+.oracle-ua-custdev-card-desc {
+    font-size: 0.98rem;
+    color: #1a3556;
+}
+
+.oracle-ua-custdev-upgrades {
+    margin-bottom: 40px;
+}
+
+.oracle-ua-custdev-upgrades-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #08376B;
+    margin-bottom: 18px;
+    letter-spacing: 0.01em;
+}
+
+.oracle-ua-custdev-upgrades-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.oracle-ua-custdev-upgrade-step {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px 0 rgba(8, 55, 107, 0.06);
+    padding: 18px 16px 12px 16px;
+    min-width: 160px;
+    max-width: 180px;
+    flex: 1 1 160px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oracle-ua-custdev-upgrade-icon {
+    font-size: 2rem;
+    color: #2196f3;
+    margin-bottom: 8px;
+}
+
+.oracle-ua-custdev-upgrade-label {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #08376B;
+    margin-bottom: 5px;
+}
+
+.oracle-ua-custdev-upgrade-desc {
+    font-size: 0.97rem;
+    color: #1a3556;
+}
+
+.oracle-ua-custdev-upgrade-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #2196f3;
+    margin: 0 4px;
+}
+
+.oracle-ua-custdev-install-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #08376B;
+    margin-bottom: 18px;
+    letter-spacing: 0.01em;
+}
+
+.oracle-ua-custdev-install-cards {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.oracle-ua-custdev-install-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px 0 rgba(8, 55, 107, 0.06);
+    padding: 18px 14px 12px 14px;
+    min-width: 160px;
+    max-width: 180px;
+    flex: 1 1 160px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oracle-ua-custdev-install-icon {
+    font-size: 2rem;
+    color: #2196f3;
+    margin-bottom: 8px;
+}
+
+.oracle-ua-custdev-install-label {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #08376B;
+    margin-bottom: 5px;
+}
+
+.oracle-ua-custdev-install-desc {
+    font-size: 0.97rem;
+    color: #1a3556;
+}
+
+@media (max-width: 900px) {
+
+    .oracle-ua-custdev-cards,
+    .oracle-ua-custdev-install-cards,
+    .oracle-ua-custdev-upgrades-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .oracle-ua-custdev-section {
+        padding: 28px 4vw 18px 4vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .oracle-ua-custdev-title {
+        font-size: 1.2rem;
+    }
+
+    .oracle-ua-custdev-upgrades-title,
+    .oracle-ua-custdev-install-title {
+        font-size: 1.05rem;
+    }
+
+    .oracle-ua-custdev-section {
+        padding: 18px 2vw 8px 2vw;
+    }
+}
+
+/* --- Oracle Unified Assurance Services Section Styles --- */
+
+
+.oracle-ua-main {
+    margin-top: 20px;
+}
+
+.oracle-ua-about-row {
+    display: flex;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto 32px auto;
+    align-items: flex-start;
+}
+
+.oracle-ua-about-main {
+    flex: 1 1 0;
+    background: none;
+    padding: 0 0 0 8px;
+}
+
+.oracle-ua-about-main h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.oracle-ua-about-main p {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+.oracle-ua-why h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.oracle-ua-why ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 32px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.oracle-ua-why li {
+    font-size: 1rem;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.oracle-ua-icon {
+    font-size: 1.1em;
+    color: #222;
+}
+
+.oracle-ua-dot {
+    font-size: 1.2em;
+    color: #222;
+    margin: 0 4px;
+}
+
+.oracle-ua-about-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    flex: 1 1 0;
+}
+
+.oracle-ua-card {
+    background: #87ceeb;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.04);
+    padding: 18px 16px 14px 16px;
+    min-width: 180px;
+    min-height: 100px;
+}
+
+.oracle-ua-card h5 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 7px;
+    color: #222;
+    letter-spacing: 0.01em;
+}
+
+.oracle-ua-card p {
+    font-size: 0.97rem;
+    color: #444;
+    margin: 0;
+}
+
+.oracle-ua-devcap-row {
+    background: #f3f3f4;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto 32px auto;
+    padding: 32px 32px 24px 32px;
+}
+
+.oracle-ua-devcap-main h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.oracle-ua-tabs {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 12px;
+}
+
+.oracle-ua-tab {
+    font-size: 1rem;
+    color: #888;
+    background: none;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+.oracle-ua-tab-active {
+    background: #fff;
+    color: #222;
+    border-bottom: 2px solid #222;
+}
+
+.oracle-ua-tab-content {
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.04);
+    padding: 18px 18px 12px 18px;
+}
+
+.oracle-ua-tab-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.oracle-ua-tab-desc {
+    font-size: 0.97rem;
+    color: #444;
+}
+
+.oracle-ua-cta-row {
+    text-align: center;
+    margin: 38px auto 0 auto;
+    max-width: 1200px;
+}
+
+.oracle-ua-cta-row h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 900px) {
+
+    .oracle-ua-header-row,
+    .oracle-ua-about-row,
+    .oracle-ua-devcap-row {
+        flex-direction: column;
+        padding: 0 8px;
+        min-width: 0;
+    }
+
+    .oracle-ua-header-content {
+        padding: 32px 16px 32px 16px;
+    }
+
+    .oracle-ua-header-img {
+        min-height: 120px;
+    }
+
+    .oracle-ua-about-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .oracle-ua-devcap-row {
+        padding: 18px 6px 12px 6px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .oracle-ua-header-row,
+    .oracle-ua-about-row,
+    .oracle-ua-devcap-row {
+        max-width: 100vw;
+        margin: 0 0 18px 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .oracle-ua-header-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .oracle-ua-header-content {
+        padding: 18px 6px 18px 6px;
+    }
+
+    .oracle-ua-header-img {
+        min-height: 60px;
+        flex: 0 0 80px;
+    }
+
+    .oracle-ua-about-main h3,
+    .oracle-ua-devcap-main h3 {
+        font-size: 1.05rem;
+    }
+
+    .oracle-ua-card h5 {
+        font-size: 0.97rem;
+    }
+
+    .oracle-ua-cta-row h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- Hire Banner Card Section Styles --- */
+.fsd-hire-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 32px 0 rgba(8, 55, 107, 0.10);
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.fsd-hire-banner-inner {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: 320px;
+    background-color: linear-gradient(135deg, #08376B 0%, #87ceeb 100%) !important;
+
+
+}
+
+.fsd-hire-banner-img {
+    /* flex: 0 0 340px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(120deg, #08376B 60%, #87ceeb 100%); */
+    /* border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px; */
+    position: relative;
+    overflow: visible;
+}
+
+.fsd-hire-banner-img img {
+    width: 260px;
+    /* max-width: 90%; */
+    /* margin-left: -40px;
+  margin-top: 24px;
+  margin-bottom: 24px; */
+    filter: drop-shadow(0 8px 32px rgba(8, 55, 107, 0.18));
+    /* border-radius: 18px; */
+    background: transparent;
+}
+
+.fsd-hire-banner-content {
+    flex: 1 1 0;
+    background: #fff;
+    /* border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px; */
+    /* padding: 40px 48px 40px 36px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #08376B;
+    box-shadow: none;
+}
+
+.fsd-hire-banner-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #08376B;
+}
+
+.fsd-hire-banner-content p {
+    font-size: 1.15rem;
+    margin-bottom: 18px;
+    color: #1a3556;
+}
+
+.fsd-hire-banner-content ul {
+    margin: 0 0 22px 0;
+    padding-left: 18px;
+}
+
+.fsd-hire-banner-content ul li {
+    font-size: 1.05rem;
+    margin-bottom: 7px;
+    color: #08376B;
+    list-style: disc inside;
+}
+
+.fsd-hire-banner-content a {
+    position: relative;
+    left: 40px;
+}
+
+.fsd-hire-btn {
+    display: inline-block;
+    background: #08376B;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 13px 36px;
+    border-radius: 8px;
+    max-width: 300px;
+    justify-self: center;
+    text-decoration: none;
+    box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.13);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-top: 8px 30px;
+}
+
+.fsd-hire-btn:hover {
+    background: #87ceeb;
+    color: #08376B;
+    box-shadow: 0 6px 24px 0 rgba(8, 55, 107, 0.18);
+}
+
+@media (max-width: 900px) {
+    .fsd-hire-banner-inner {
+        flex-direction: column;
+        min-height: unset;
+    }
+
+    .fsd-hire-banner-img {
+        border-radius: 22px 22px 0 0;
+        justify-content: center;
+        min-height: 180px;
+    }
+
+    .fsd-hire-banner-content {
+        border-radius: 0 0 22px 22px;
+        padding: 32px 18px 32px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fsd-hire-banner {
+        max-width: 98vw;
+        margin: 32px 0 0 0;
+        border-radius: 14px;
+    }
+
+    .fsd-hire-banner-img img {
+        width: 160px;
+        margin-left: -12px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border-radius: 10px;
+    }
+
+    .fsd-hire-banner-content {
+        padding: 18px 8px 18px 8px;
+    }
+
+    .fsd-hire-banner-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* --- Full Stack Development Page Modern Styles --- */
+.fsd-techstack-section {
+    background: linear-gradient(135deg, #08376B 0%, #87ceeb 100%);
+    color: #fff;
+    border-radius: 18px 18px 0px 0px;
+
+    box-shadow: 0 4px 24px 0 rgba(8, 55, 107, 0.08);
+    padding: 48px 32px;
+}
+
+.fsd-techstack-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #08376B;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+.fsd-cta-action {
+    display: inline-block;
+    border: 2px solid #08376B;
+    background: #fff;
+    color: #08376B;
+    margin: 10px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.fsd-cta-action:hover {
+    background: #08376B;
+    color: #fff;
+}
+
+
+
+.fsd-techstack-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #fff;
+    text-align: center;
+}
+
+.fsd-techstack-table {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 24px;
+}
+
+.fsd-techstack-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 0px 10px;
+    box-shadow: 0 1px 6px 0 rgba(8, 55, 107, 0.04);
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.fsd-techstack-label {
+
+    min-width: 180px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #87ceeb;
+    text-align: left;
+}
+
+.fsd-techstack-icons {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.fsd-techstack-icons img {
+
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    padding: 10px;
+    border-radius: 8px;
+    /* box-shadow: 0 1px 6px 0 rgba(8,55,107,0.07); */
+    /* padding: 6px; */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fsd-techstack-icons img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px 0 rgba(8, 55, 107, 0.13);
+}
+
+@media (max-width: 900px) {
+    .fsd-timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fsd-techstack-table {
+        gap: 18px;
+    }
+
+    .fsd-techstack-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .fsd-hero-section,
+    .fsd-services-section,
+    .fsd-cta-section,
+    .fsd-process-section,
+    .fsd-techstack-section {
+        padding: 24px 8px;
+    }
+
+    .fsd-timeline-step {
+        width: 100%;
+        padding: 24px 8px;
+    }
+
+    .fsd-techstack-row {
+        padding: 12px 6px;
+    }
+
+    .fsd-techstack-label {
+        min-width: 120px;
+        font-size: 1rem;
+    }
+
+    .fsd-techstack-icons img {
+        width: 36px;
+        height: 36px;
+        padding: 3px;
+    }
+}
+
 @import url('fonts/fonts.css');
 @import url('fonts/all.css');
 @import url('animate.css');
@@ -11,9 +934,10 @@ html {
 }
 
 body {
-    font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     font-weight: 400;
     color: #1d1d1d;
+    overflow-x: hidden !important;
 }
 
 section.section {
@@ -557,7 +1481,7 @@ footer p span {
     color: #222;
     font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 1rem;
-    margin-top: 32px;
+    /* margin-top: 32px; */
     border-radius: 8px 8px 0 0;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
     padding: 40px 48px 0 48px;
@@ -609,7 +1533,7 @@ footer p span {
     .footer-top,
     .footer-middle,
     .footer-bottom {
-        
+
         width: 100%;
         min-width: 0;
     }
@@ -664,7 +1588,7 @@ footer p span {
 
 .footer-col ul li {
     margin-bottom: 12px;
-   font-size: xx-small;
+    font-size: xx-small;
     color: #222;
     /* font-weight: 400; */
     /* letter-spacing: 0.01em; */
@@ -2060,9 +2984,13 @@ nav .wrapper.hover .contact-button {
 }
 
 nav .wrapper:hover li a,
-nav .wrapper.hover li a {
-    color: black;
+nav .wrapper.hover li a,
+nav .wrapper:hover .language-wrapper #divider,
+nav .wrapper.hover .language-wrapper #divider {
+    color: black !important;
 }
+
+
 
 /* Optional: if you want hover underline effects or dropdowns */
 .nav-links>li:hover>a::after,
@@ -2140,7 +3068,7 @@ nav .wrapper.hover li a {
 
 .custom-card:hover {
     background: #08376B;
-   
+
     box-shadow: 0 4px 24px rgba(255, 179, 71, 0.15);
     transform: translateY(-4px) scale(1.03);
 }
@@ -2178,6 +3106,7 @@ nav .wrapper.hover li a {
 .custom-card:hover .card-desc {
     color: #FAF9FB;
 }
+
 .card-desc {
     font-size: 1rem;
     color: #3a3a3a;
@@ -2215,13 +3144,13 @@ nav .wrapper.hover li a {
 
 .language-wrapper #eng,
 .language-wrapper #fr {
-    padding: 0 8px;
+    padding: 0px;
 }
 
 .language-wrapper #divider {
     color: #fff;
     font-size: 16px;
-    padding: 0 18px;
+    padding: 5px;
 }
 
 .language-wrapper a {
@@ -2283,7 +3212,7 @@ nav .wrapper.hover li a {
     max-width: 1100px;
     width: 100%;
     border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
     overflow: hidden;
     padding: 8px 4px;
 }
@@ -2406,4 +3335,894 @@ nav .wrapper.hover li a {
     .connect-form {
         max-width: 100%;
     }
+}
+
+
+/* Remove horizontal scroll for all main containers */
+.fsd-hero,
+.fsd-services-section,
+.fsd-cta-section,
+.fsd-process-section,
+.fsd-timeline,
+.fsd-services-container {
+    justify-content: center;
+    max-width: 100vw;
+    overflow-x: hidden !important;
+}
+
+/* --- Full Stack Development Landing Page Styles --- */
+/* Responsive Styles */
+@media (max-width: 1100px) {
+
+    .fsd-services-container,
+    .fsd-timeline {
+        max-width: 98vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .fsd-services-container {
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    .fsd-services-list {
+        border-right: none;
+        border-bottom: 1.5px solid #e5e7eb;
+        align-items: flex-start;
+        padding: 24px 0 0 0;
+    }
+
+    #fsd-service-list {
+        padding: 0 0 0 0;
+    }
+
+    .fsd-service-panel {
+        padding: 24px 12px;
+        min-width: 0;
+    }
+
+    .fsd-panel-card {
+        flex-direction: column;
+        gap: 18px;
+        align-items: flex-start;
+    }
+
+    .fsd-timeline {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .fsd-timeline-step {
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .fsd-hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .fsd-hero-content p {
+        font-size: 1rem;
+    }
+
+    .fsd-services-list {
+        padding: 12px 0 0 0;
+    }
+
+    .fsd-service-panel {
+        padding: 12px 2vw;
+    }
+
+    .fsd-panel-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .fsd-panel-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .fsd-panel-info p {
+        font-size: 0.97rem;
+    }
+
+    .fsd-cta-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .fsd-cta-content p {
+        font-size: 0.97rem;
+    }
+
+    .fsd-cta-icons span {
+        font-size: 1.3rem;
+        padding: 8px 10px;
+    }
+
+    .fsd-process-title {
+        font-size: 1.1rem;
+    }
+
+    .fsd-timeline-step {
+        padding: 18px 8px;
+    }
+
+    .fsd-step-number {
+        font-size: 1.1rem;
+    }
+
+    .fsd-step-title {
+        font-size: 1rem;
+    }
+
+    .fsd-step-desc {
+        font-size: 0.95rem;
+    }
+}
+
+.fsd-hero {
+    position: relative;
+    width: 100vw;
+    min-height: 420px;
+    background: linear-gradient(120deg, #08376B 0%, #87ceeb 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(8, 55, 107, 0.13);
+}
+
+.fsd-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/app_development1.jpg') center/cover no-repeat;
+    filter: brightness(0.55) grayscale(0.08) blur(1.2px);
+    z-index: 1;
+    opacity: 0.92;
+}
+
+.fsd-hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding: 80px 24px 90px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    /* background: rgba(8, 55, 107, 0.45); */
+    border-radius: 24px;
+    box-shadow: 0 4px 32px rgba(8, 55, 107, 0.10);
+}
+
+.fsd-services-title {
+    font-size: 2.0rem;
+    padding: 0 32px;
+    text-align: left;
+}
+
+.fsd-hero-content h1 {
+    font-size: 3.4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+    padding: 10px 0;
+    /* text-shadow: 0 2px 24px #08376B, 0 2px 16px #87ceeb; */
+}
+
+.fsd-hero-content p {
+    font-size: 1.55rem;
+    font-weight: 400;
+    opacity: 0.98;
+    /* text-shadow: 0 1px 12px #08376B, 0 1px 8px #87ceeb; */
+}
+
+.fsd-services-section {
+    /* background: #e2f1fa; */
+    /* padding: 20px 0px; */
+    justify-items: center;
+}
+
+
+.fsd-services-container {
+    display: flex;
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0 8px 40px rgba(8, 55, 107, 0.13);
+    overflow: visible;
+    min-height: 340px;
+    position: relative;
+    z-index: 3;
+    flex-wrap: wrap;
+
+}
+
+.fsd-services-list {
+    flex: 1 1 260px;
+    /* background: linear-gradient(120deg, #eaf4fd 60%, #87ceeb 100%); */
+    padding: 48px 0 48px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 220px;
+    /* border-right: 2px solid #87ceeb; */
+    border-radius: 32px 0 0 32px;
+    /* box-shadow: 2px 0 12px rgba(8, 55, 107, 0.04); */
+}
+
+#fsd-service-list {
+    width: 100%;
+    padding: 0 0 0 32px;
+    margin: 0;
+    list-style: none;
+}
+
+#fsd-service-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.18rem;
+    font-weight: 500;
+    color: #08376B;
+    padding: 5px 0 5px 0;
+    margin-bottom: 2px;
+    /* border-radius: 12px 0 0 12px; */
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, transform 0.18s, box-shadow 0.18s;
+    position: relative;
+    z-index: 2;
+    box-shadow: none;
+    border-bottom: 1px solid #87ceeb;
+}
+
+#fsd-service-list li .fsd-icon {
+    margin-right: 18px;
+    font-size: 1.5em;
+    color: #87ceeb;
+    width: 36px;
+    text-align: center;
+}
+
+#fsd-service-list li.active,
+#fsd-service-list li:hover {
+
+    background-color: #87ceeb;
+    /* background: linear-gradient(90deg, #eaf4fd 60%, #87ceeb 100%); */
+    color: #08376B;
+    /* transform: translateX(10px) scale(0.96); */
+    font-weight: 700;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 2px 12px rgba(8, 55, 107, 0.08); */
+}
+
+#fsd-service-list li.active .fsd-icon,
+#fsd-service-list li:hover .fsd-icon {
+    color: #08376B;
+}
+
+.fsd-service-panel {
+    flex: 2 1 500px;
+
+    padding: 48px 48px 48px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 260px;
+    min-height: 280px;
+    /* background: linear-gradient(120deg, #eaf4fd 60%, #87ceeb 100%); */
+    border-radius: 0 32px 32px 0;
+    animation: fadeInPanel 0.4s;
+    /* box-shadow: 0 2px 16px rgba(8, 55, 107, 0.09); */
+}
+
+@keyframes fadeInPanel {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fsd-panel-card {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+}
+
+.fsd-panel-img {
+    width: 310px;
+    height: 310px;
+    object-fit: contain;
+
+}
+
+.fsd-panel-info h3 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    /* color: #08376B; */
+    margin-bottom: 12px;
+}
+
+.fsd-panel-info p {
+    font-size: 1.13rem;
+    /* color: #08376B; */
+    opacity: 0.97;
+}
+
+/* CTA Section */
+.fsd-cta-section {
+    /* background: linear-gradient(90deg, #eaf4fd 0%, #f7fafd 100%); */
+    padding: 72px 0 64px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/mobile_app_development_freepik.jpg');
+
+}
+
+.fsd-cta-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #2C4A7B;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(44, 74, 123, 0.10);
+    padding: 40px 32px 36px 32px;
+}
+
+.fsd-cta-content h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.fsd-cta-content p {
+    font-size: 1.18rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.fsd-cta-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+
+}
+
+.fsd-cta-icons span {
+    border: 2px solid #2C4A7B;
+    font-size: 2.5rem;
+    color: #2C4A7B;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px rgba(44, 74, 123, 0.09);
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Timeline/Process Section */
+
+.fsd-process-title {
+    text-align: center;
+    color: #08376B;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 48px;
+    letter-spacing: 0.01em;
+}
+
+.fsd-timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    padding: 50px;
+}
+
+.fsd-timeline-step {
+    background: linear-gradient(120deg, #eaf4fd 60%, #fff 100%);
+    border-radius: 24px;
+    box-shadow: 0 2px 16px #87ceeb;
+    padding: 40px 28px;
+    min-width: 200px;
+    max-width: 240px;
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInStep 0.7s forwards;
+    animation-delay: calc(var(--i, 1) * 0.13s);
+    border-left: 6px solid #08376B;
+    position: relative;
+
+}
+
+.fsd-timeline-step {
+    border-left: none;
+    border-right: 6px solid #08376B;
+    align-items: flex-end;
+
+
+}
+
+/* .fsd-timeline-step:nth-child(1) {
+    --i: 1;
+}
+
+.fsd-timeline-step:nth-child(2) {
+    --i: 2;
+}
+
+.fsd-timeline-step:nth-child(3) {
+    --i: 3;
+}
+
+.fsd-timeline-step:nth-child(4) {
+    --i: 4;
+}
+
+.fsd-timeline-step:nth-child(5) {
+    --i: 5;
+}
+
+.fsd-timeline-step:nth-child(6) {
+    --i: 6;
+} */
+
+@keyframes fadeInStep {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fsd-step-number {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #08376B;
+    margin-bottom: 12px;
+}
+
+.fsd-step-title {
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: #08376B;
+    margin-bottom: 8px;
+}
+
+.fsd-step-desc {
+    font-size: 1.05rem;
+    color: #08376B;
+    opacity: 0.97;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+
+    .fsd-services-container,
+    .fsd-timeline {
+        max-width: 98vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .fsd-services-container {
+        flex-direction: column;
+        min-width: 0;
+        border-radius: 32px;
+    }
+
+    .fsd-services-list {
+        border-right: none;
+        border-bottom: 2px solid #e5e7eb;
+        align-items: flex-start;
+        padding: 32px 0 0 0;
+        border-radius: 32px 32px 0 0;
+    }
+
+    #fsd-service-list {
+        padding: 0 0 0 0;
+    }
+
+    .fsd-service-panel {
+        padding: 32px 12px;
+        min-width: 0;
+    }
+
+    .fsd-panel-card {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .fsd-timeline {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .fsd-timeline-step {
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+        border-radius: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fsd-hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .fsd-hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .fsd-services-list {
+        padding: 12px 0 0 0;
+    }
+
+    .fsd-service-panel {
+        padding: 12px 2vw;
+    }
+
+    .fsd-panel-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .fsd-panel-info h3 {
+        font-size: 1.13rem;
+    }
+
+    .fsd-panel-info p {
+        font-size: 0.99rem;
+    }
+
+    .fsd-cta-content h2 {
+        font-size: 1.13rem;
+    }
+
+    .fsd-cta-content p {
+        font-size: 0.99rem;
+    }
+
+    .fsd-cta-icons span {
+        font-size: 1.4rem;
+        padding: 10px 12px;
+    }
+
+    .fsd-process-title {
+        font-size: 1.13rem;
+    }
+
+    .fsd-timeline-step {
+        padding: 18px 8px;
+    }
+
+    .fsd-step-number {
+        font-size: 1.13rem;
+    }
+
+    .fsd-step-title {
+        font-size: 1.01rem;
+    }
+
+    .fsd-step-desc {
+        font-size: 0.97rem;
+    }
+}
+
+/* === Full Stack Development Landing Page Custom Styles === */
+.fsd-bg-section {
+    width: 100vw;
+    min-height: 320px;
+    background: url('/images/app_development1.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    margin-top: 0;
+    z-index: 1;
+}
+
+.fsd-bg-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 74, 123, 0.32);
+    z-index: 2;
+}
+
+.fsd-bg-content {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    padding: 48px 16px 56px 16px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.fsd-bg-content h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+}
+
+.fsd-bg-content p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0.92;
+}
+
+.fsd-dev-section {
+    background: #EAF4FD;
+    padding: 48px 0 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+}
+
+.fsd-dev-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(44, 74, 123, 0.07);
+    padding: 32px 28px;
+    min-width: 220px;
+    max-width: 320px;
+    flex: 1 1 260px;
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
+    position: relative;
+}
+
+.fsd-dev-card:hover {
+    box-shadow: 0 8px 32px rgba(44, 74, 123, 0.13);
+    border-color: #2C4A7B;
+    background: #f7fbff;
+}
+
+.fsd-dev-card.selected {
+    border-color: #2C4A7B;
+    background: #eaf4fd;
+}
+
+.fsd-dev-card .fsd-dev-icon {
+    font-size: 2.5rem;
+    color: #2C4A7B;
+    margin-bottom: 18px;
+}
+
+.fsd-dev-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2C4A7B;
+    margin-bottom: 10px;
+}
+
+.fsd-dev-card p {
+    font-size: 1.05rem;
+    color: #222;
+    opacity: 0.95;
+    text-align: center;
+}
+
+/* Hiring Banner Card */
+.fsd-hiring-banner {
+    background: linear-gradient(90deg, #2C4A7B 0%, #4e7ac7 100%);
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(44, 74, 123, 0.10);
+    margin: 32px auto 32px auto;
+    max-width: 900px;
+    padding: 32px 24px 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.fsd-hiring-banner .fsd-hiring-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    flex: 1 1 300px;
+}
+
+.fsd-hiring-banner .fsd-hiring-btn {
+    background: #fff;
+    color: #2C4A7B;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 12px 32px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(44, 74, 123, 0.10);
+    transition: background 0.18s, color 0.18s;
+}
+
+.fsd-hiring-banner .fsd-hiring-btn:hover {
+    background: #2C4A7B;
+    color: #fff;
+}
+
+/* Full Stack Development Process Section */
+.fsd-process-section {
+    background-image: url('/images/light_bl_bg1.jpg');
+    /* background: #EAF4FD; */
+    padding: 56px 0 48px 0;
+}
+
+.fsd-process-title {
+    text-align: center;
+    color: #2C4A7B;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.fsd-process-timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.fsd-process-step {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(44, 74, 123, 0.07);
+    padding: 32px 24px;
+    min-width: 180px;
+    max-width: 220px;
+    flex: 1 1 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 24px;
+    border-left: 6px solid #2C4A7B;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.fsd-process-step .fsd-step-icon {
+    font-size: 2rem;
+    color: #2C4A7B;
+    margin-bottom: 12px;
+}
+
+.fsd-process-step .fsd-step-title {
+    font-size: 1.13rem;
+    font-weight: 700;
+    color: #2C4A7B;
+    margin-bottom: 6px;
+}
+
+.fsd-process-step .fsd-step-desc {
+    font-size: 1.01rem;
+    color: #222;
+    opacity: 0.95;
+}
+
+.fsd-process-step:nth-child(even) {
+    border-left: none;
+    border-right: 6px solid #2C4A7B;
+    align-items: flex-end;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+    .fsd-process-timeline {
+        max-width: 98vw;
+    }
+
+    .fsd-dev-section {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    .fsd-process-timeline {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .fsd-process-step {
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+        border-left: 6px solid #2C4A7B;
+        border-right: none !important;
+        align-items: flex-start !important;
+    }
+
+    .fsd-process-step:nth-child(even) {
+        border-left: 6px solid #2C4A7B;
+        border-right: none;
+        align-items: flex-start;
+    }
+
+    .fsd-dev-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .fsd-bg-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .fsd-bg-content p {
+        font-size: 1rem;
+    }
+
+    .fsd-dev-card {
+        padding: 18px 8px;
+        min-width: 0;
+        max-width: 100vw;
+    }
+
+    .fsd-hiring-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 8px;
+        gap: 12px;
+    }
+
+    .fsd-hiring-banner .fsd-hiring-btn {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .fsd-process-title {
+        font-size: 1.1rem;
+    }
+
+    .fsd-process-step {
+        padding: 18px 8px;
+    }
+}
+
+/* Prevent horizontal scroll for landing page only */
+.fsd-bg-section,
+.fsd-dev-section,
+.fsd-hiring-banner,
+.fsd-process-section {
+    max-width: 100vw;
+    overflow-x: hidden;
 }
