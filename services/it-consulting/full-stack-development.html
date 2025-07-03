@@ -188,7 +188,7 @@
         <span><i class="fa-solid fa-shield-halved"></i></span>
         <span><i class="fa-solid fa-users"></i></span>
       </div> -->
-      <div class="page-cta-action">
+      <div class="page-cta-action" id="book-consultation-btn">
         share your requirements
       </div>
     </div>
@@ -255,9 +255,9 @@
         <div class="page-techstack-label"><span>Frontend Development</span></div>
         <div class="page-techstack-icons">
 
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original-wordmark.svg" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original-wordmark.svg" />
+        
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original-wordmark.svg" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nuxtjs/nuxtjs-plain-wordmark.svg" />
@@ -297,10 +297,8 @@
 
 
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ionic/ionic-original-wordmark.svg" />
-          <img src="/images/tech/react-native.png" alt="React Native" title="React Native">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-plain.svg" />
-          <img src="/images/tech/cordova.png" alt="Cordova" title="Cordova">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original-wordmark.svg" />
 
         </div>
       </div>
@@ -440,6 +438,44 @@
       });
     });
   </script>
+
+    <!-- Connect Section (below stats section) -->
+    <div class="connect-section" style="background-image: url('/images/contact_page_bg.jpg');">
+        <div class="connect-container">
+            <div class="connect-left">
+                <div class="connect-title">Connect Now</div>
+                <div class="connect-desc">Data. Insights. Decisions. Outcomes. – <span class="connect-bold">Your
+                        journey. Our partnership.</span></div>
+                <div class="connect-question">What’s your next big ambition? <span class="connect-bold">Let’s discuss
+                        it!</span></div>
+            </div>
+            <div class="connect-right">
+                <form class="connect-form">
+                    <div class="form-group">
+                        <label for="connect-name">Name</label>
+                        <input type="text" id="connect-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="connect-phone">Phone</label>
+                        <input type="tel" id="connect-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="connect-email">Email</label>
+                        <input type="email" id="connect-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="connect-message">How can we help?</label>
+                        <textarea id="connect-message" name="message" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group captcha-group">
+                        <input type="checkbox" id="connect-captcha" required>
+                        <label for="connect-captcha">I'm not a robot</label>
+                    </div>
+                    <button type="submit" class="connect-btn">Get in touch</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
   <footer class="custom-footer">
@@ -828,6 +864,28 @@
       els.forEach(el => observer.observe(el));
     })();
   </script>
+      <script>
+        // Smooth scroll to connect-section on button click or hire button click
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('book-consultation-btn');
+            var hireBtn = document.querySelector('.btn-hire');
+            function scrollToConnect() {
+                var connectSection = document.querySelector('.connect-section');
+                if (connectSection) {
+                    connectSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            if (btn) {
+                btn.addEventListener('click', scrollToConnect);
+            }
+            if (hireBtn) {
+                hireBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToConnect();
+                });
+            }
+        });
+    </script>
 
 </body>
 
