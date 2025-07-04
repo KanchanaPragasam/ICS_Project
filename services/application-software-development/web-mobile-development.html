@@ -164,24 +164,29 @@
 
                 <ul id="page-service-list">
                     <li class="active" data-service="analysis"><span class="page-icon"><i
-                                class="fa-solid fa-laptop-code"></i></span> Requirement Analysis & Consulting</li>
-                    <li data-service="uiux"><span class="page-icon"><i class="fa-solid fa-server"></i></span> UI/UX
-                        Design</li>
-                    <li data-service="backend"><span class="page-icon"><i class="fa-solid fa-brain"></i></span> Backend
-                        Development</li>
-                    <li data-service="frontend"><span class="page-icon"><i class="fa-solid fa-plug"></i></span> Frontend
-                        Development</li>
-                    <li data-service="db"><span class="page-icon"><i class="fa-solid fa-database"></i></span> Database
-                        Design & Integration</li>
-                    <li data-service="integration"><span class="page-icon"><i
-                                class="fa-brands fa-node-js"></i></span>Third Party Integrations</li>
-                    <li data-service="security"><span class="page-icon"><i class="fa-solid fa-gears"></i></span>
-                        Security & Compliance
+                                class="fa-solid fa-laptop-code"></i></span> Custom Websites & Portals</li>
+                    <li data-service="pwa"><span class="page-icon"><i class="fa-solid fa-server"></i></span>Progressive
+                        Web Apps (PWAs)</li>
+                    <li data-service="ecommerce"><span class="page-icon"><i class="fa-solid fa-brain"></i></span>
+                        E-Commerce Platforms</li>
+                    <li data-service="cms"><span class="page-icon"><i class="fa-solid fa-plug"></i></span> Content
+                        Management Systems (CMS)</li>
+                    <li data-service="analytics"><span class="page-icon"><i class="fa-solid fa-database"></i></span>
+
+                        Web-Based Dashboards & Analytics</li>
+                    <li data-service="mobile"><span class="page-icon"><i
+                                class="fa-brands fa-node-js"></i></span>Mobile Development Services </li>
+                    <li data-service="cross_platform"><span class="page-icon"><i class="fa-solid fa-gears"></i></span>
+                        Cross-Platform Apps
                     </li>
-                    <li data-service="testing"><span class="page-icon"><i class="fa-solid fa-palette"></i></span>
-                        Testing & Quality Assurance</li>
+                    <li data-service="native"><span class="page-icon"><i class="fa-solid fa-palette"></i></span>
+                        Native Mobile Apps</li>
+                    <li data-service="enterprise"><span class="page-icon"><i class="fa-solid fa-palette"></i></span>
+                        Enterprise Mobility Solutions</li>
+                    <li data-service="mobile_ui_ux"><span class="page-icon"><i class="fa-solid fa-palette"></i></span>
+                        Mobile UI/UX Design</li>
                     <li data-service="deployment"><span class="page-icon"><i class="fa-solid fa-palette"></i></span>
-                        Deployment & Support</li>
+                        App Store Deployment & Support</li>
                 </ul>
             </div>
             <div class="page-service-panel" id="page-service-panel">
@@ -192,7 +197,7 @@
     <section class="page-offer-section layout-01-style" style="margin-top: 32px;">
         <h2 class="page-offer-title">Our Web & Mobile Development Expertise</h2>
         <div class="page-offer-grid">
-           
+
             <div class="page-offer-card">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-plain.svg"
                     style="width:48px;height:48px;" />
@@ -235,7 +240,7 @@
                 <div class="page-offer-card-desc">Build intuitive and powerful web applications with Vue.js. Our Vue.js
                     services ensure a tailored, interactive experience that keeps users coming back.</div>
             </div>
-           
+
             <div class="page-offer-card">
 
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
@@ -258,30 +263,32 @@
 
         </div>
         <div class="page-cta-action">
-            <button id="book-consultation-btn" type="button" style="background:none;border:none;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;">Book our Consultation</button>
+            <button id="book-consultation-btn" type="button"
+                style="background:none;border:none;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;">Book
+                our Consultation</button>
         </div>
-    <script>
-        // Smooth scroll to connect-section on button click or hire button click
-        document.addEventListener('DOMContentLoaded', function () {
-            var btn = document.getElementById('book-consultation-btn');
-            var hireBtn = document.querySelector('.btn-hire');
-            function scrollToConnect() {
-                var connectSection = document.querySelector('.connect-section');
-                if (connectSection) {
-                    connectSection.scrollIntoView({ behavior: 'smooth' });
+        <script>
+            // Smooth scroll to connect-section on button click or hire button click
+            document.addEventListener('DOMContentLoaded', function () {
+                var btn = document.getElementById('book-consultation-btn');
+                var hireBtn = document.querySelector('.btn-hire');
+                function scrollToConnect() {
+                    var connectSection = document.querySelector('.connect-section');
+                    if (connectSection) {
+                        connectSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
-            }
-            if (btn) {
-                btn.addEventListener('click', scrollToConnect);
-            }
-            if (hireBtn) {
-                hireBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    scrollToConnect();
-                });
-            }
-        });
-    </script>
+                if (btn) {
+                    btn.addEventListener('click', scrollToConnect);
+                }
+                if (hireBtn) {
+                    hireBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        scrollToConnect();
+                    });
+                }
+            });
+        </script>
     </section>
     <section class="page-hire-banner">
         <div class="page-hire-banner-inner">
@@ -302,7 +309,7 @@
             </div>
         </div>
     </section>
-        <div class="connect-section" style="background-image: url('/images/contact_page_bg.jpg');">
+    <div class="connect-section" style="background-image: url('/images/contact_page_bg.jpg');">
         <div class="connect-container">
             <div class="connect-left">
                 <div class="connect-title">Connect Now</div>
@@ -339,7 +346,6 @@
         </div>
     </div>
     <!-- What We Offer Section (Tech Card Grid) -->
-
     <footer class="custom-footer">
         <div class="footer-top">
             <div class="footer-col">
@@ -352,7 +358,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h5>Technology</h5>
+                <h5>Technologies</h5>
                 <ul>
                     <li>Microsoft</li>
                     <li>AWS</li>
@@ -364,7 +370,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h5>IT Professional Services</h5>
+                <h5>Industries</h5>
                 <ul>
                     <li>Supply Chain</li>
                     <li>Manufacturing</li>
@@ -376,7 +382,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h5>Service Assurance</h5>
+                <h5>About</h5>
                 <ul>
                     <li>Company</li>
                     <li>Resources</li>
@@ -393,14 +399,22 @@
                         <span class="fi fi-ca"></span>
                         <span class="footer-office"><b>Informations Consultants Services Inc.</b></span><br>
                         <span>5236, Philias Gagnon,
-                            Montreal, Quebec,<br>Canada
-                            H1R 3Z6</span>
+                            Montreal, Quebec,<br> Canada
+                            H1R 3Z6</span><br>
+                        <div><span class="footer-icon"><i class="fa-solid fa-envelope"></i></span> <a
+                                href="mailto:sales@icstech.ca">sales@icstech.ca</a>
+                        </div>
+
                     </div>
+
                     <div class="footer-address">
                         <span class="fi fi-us "></span>
                         <span class="footer-office"><b>Missionmind IT Services LLC</b></span><br>
                         <span>11745 Stoney Peak Dr, 207
                             San Diego,<br>California, 92128, USA</span>
+                        <div><span class="footer-icon"><i class="fa-solid fa-envelope"></i></span> <a
+                                href="mailto:info@missionmindtech.com">info@missionmindtech.com</a>
+                        </div>
                     </div>
 
                     <div class="footer-address">
@@ -408,15 +422,13 @@
 
                         <span class="footer-office"><b>Missionmind IT Services Private Limited</b></span><br>
                         <span>8, Mariyamman Koil Street,
-                            Menambedu, Ambattur<br>Chennai,
+                            Menambedu, Ambattur,<br>Chennai,
                             Tamil Nadu 600053, India.</span>
-                    </div>
-                    <div class="footer-address">
-                        <div><b>CALL</b></div>
-                        <div><span class="footer-icon">📞</span> <a href="tel:+18663457638">+1 (866) 345-7638</a>
-                        </div>
-                        <div><span class="footer-icon">✉️</span> <a
-                                href="mailto:info@softwebsolutions.com">info@softwebsolutions.com</a></div>
+                        <div><span class="footer-icon"><i class="fa-solid fa-phone"></i>
+                            </span> <a href="tel:+914426862365">+91 4426862365</a></div>
+                        <div><span class="footer-icon"><i class="fa-solid fa-envelope"></i>
+                            </span> <a href="mailto:info@missionmindtech.com">info@missionmindtech.com</a></div>
+
                     </div>
                 </div>
             </div>
@@ -441,18 +453,16 @@
                 <div class="footer-social">
                     <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
                 </div>
-                <div class="footer-cert">
-                    <img src="images/soc2.png" alt="SOC2" class="footer-cert-img">
-                    <img src="images/iso.png" alt="ISO" class="footer-cert-img">
-                </div>
+
             </div>
         </div>
         <div class="footer-copyright">
-            © 2025 Softweb Solutions Inc. (An Avnet Company) All rights reserved.
+            Copyright© 2024 inspirationcs.ca All Rights Reserved
         </div>
     </footer>
 
@@ -472,44 +482,54 @@
                 ],
                 img: '../../images/front_end_development.jpg'
             },
-            uiux: {
-                title: 'UI/UX Design',
-                desc: 'Our design team develops user friendly design that uses an intuitive interface, which facilitates usability and provides convenient digital experience.',
+            pwa: {
+                title: 'Progressive Web Apps (PWAs)',
+                desc: 'Rapid, performance and interactive web apps that provide native-like experience across multiple devices. ',
                 img: '../../images/backend_development.jpg'
             },
-            backend: {
-                title: 'Backend Development',
-                desc: 'We build robust, secure, and scalable server-side logic using modern frameworks and best practices to ensure performance and reliability.',
+            ecommerce: {
+                title: 'E-Commerce Platforms',
+                desc: 'Feature-rich online stores with secure payment integration, inventory management, and user-friendly interfaces. ',
                 img: '../../images/AI_ML_integration.jpg'
             },
-            frontend: {
-                title: 'Frontend Development',
+            cms: {
+                title: 'Content Management Systems (CMS)',
                 desc: 'Seamlessly connect your systems and third-party services with robust, secure API integrations and custom middleware.',
                 img: '../../images/API_integration.jpg'
             },
-            db: {
-                title: 'Database Design & Integration',
-                desc: 'Design, configure, and optimize SQL and NoSQL databases for reliability, speed, and scalability.',
+            analytics: {
+                title: 'Web-Based Dashboards & Analytics',
+                desc: 'Dashboards and data visualization tools in real time to help you monitor KPIs and make proper decisions.',
                 img: '../../images/database_configuration.jpg'
             },
-            integration: {
-                title: 'Third-Party Integrations',
-                desc: 'Seamless integration with external services such as payment gateways, CRM systems, analytics platforms, and more.',
+            mobile: {
+                title: 'Mobile Development Services ',
+                desc: 'We develop mobile applications that combine intuitive design with powerful functionality.',
                 img: '../../images/mean_stack.jpg'
             },
-            security: {
-                title: 'Security & Compliance',
-                desc: 'Protection of user and data through the application of industry standard security measures, encryption, and protective measures towards regulatory compliance.',
+            cross_platform: {
+                title: 'Cross-Platform Apps',
+                desc: 'We create applications that operate seamlessly on iOS and Android using frameworks such as Flutter and React Native, and as a result, these applications use the same codebase. ',
                 img: '../../images/devops.jpg'
             },
-            testing: {
-                title: 'Testing & Quality Assurance',
-                desc: 'Comprehensive testing—including Unit, integration and user acceptance testing to make sure your application is free of bugs and ready to be released into production. ',
+            native: {
+                title: 'Native Mobile Apps',
+                desc: 'Native high-performance apps which are directly developed using iOS (Swift) and Android (Kotlin) to take advantage of platform features.',
                 img: '../../images/ui_ux.jpg'
             },
-            deployment: {
-                title: 'Deployment & Support',
-                desc: 'Full deployment services, such as cloud hosting, CI/CD process and continued support to ensure your application runs smoothly. ',
+            enterprise: {
+                title: 'Enterprise Mobility Solutions',
+                desc: 'Protect your mobile apps that enable your workforce to access business tools and business information on the way',
+                img: '../../images/ui_ux.jpg'
+            },
+            mobile_ui_ux: {
+                title: 'Mobile UI/UX Design',
+                desc: 'A user-driven design, which makes it easy to navigate, accessible on all devices. ',
+                img: '../../images/ui_ux.jpg'
+            },
+            app_store: {
+                title: 'App Store Deployment & Support',
+                desc: 'Post-launch services to help you publish your app on both Google Play and Apple App Store, and maintenance services. ',
                 img: '../../images/ui_ux.jpg'
             }
         };

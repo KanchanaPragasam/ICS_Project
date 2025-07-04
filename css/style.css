@@ -1,6 +1,62 @@
+/* --- Color Variables --- */
+:root {
+  /* Font size scale */
+  --font-size-h1: 2.25rem;
+  --font-size-h2: 1.75rem;
+  --font-size-h3: 1.375rem;
+  --font-size-h4: 1.125rem;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-p: 1.55rem;
+
+  --color-primary: #2F90B0;
+  --color-secondary: #08376B;
+  --color-accent: #35C0ED;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-light-blue: #f5fbfd;
+  --color-blue-accent: #2196f3;
+  --color-blue-bg: #eaf4fb;
+  --color-grey-bg: #f7fafd;
+  --color-grey-bg2: #fafdff;
+  --color-grey-bg3: #f6fbfe;
+  --color-grey-bg4: #f3f3f4;
+  --color-dark-blue: #1a3556;
+  --color-purple: #b86cff;
+  --color-pink: #ff4f8b;
+  --color-blue-gradient: linear-gradient(135deg, #2F90B0 0%, #35C0ED 100%);
+
+}
+
+body {
+  font-size: var(--font-size-base);
+}
+h1, .section-title {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+}
+h2, .page-upgrade-title, .page-install-title, .page-offer-title, .page-custdev-title, .page-techstack-title, .page-custdev-upgrades-title, .page-custdev-install-title {
+  /* font-size: var(--font-size-h2); */
+  font-weight: 700;
+}
+h3, .page-upgrade-step-title, .page-install-card-title, .page-offer-card-title, .page-custdev-card-title, .page-timeline-detail h5, .page-accordion-header, .page-custdev-subtitle {
+  font-size: var(--font-size-h3);
+  font-weight: 700;
+}
+h4, .page-offer-detail-title, .page-custdev-upgrade-label, .page-custdev-install-label {
+  font-size: var(--font-size-h4);
+  font-weight: 700;
+}
+p, li, .card, .card-desc, .page-upgrade-step-desc, .page-install-card-desc, .page-offer-card-desc, .page-timeline-label, .page-timeline-detail p, .page-accordion-body, .page-custdev-card-desc, .page-custdev-upgrade-desc, .page-custdev-install-desc {
+  font-size: var(--font-size-base);
+}
+small, .small, .caption {
+  font-size: var(--font-size-sm);
+}
+
 /* --- Common Section Styles --- */
 .section-main {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 16px;
     margin: 48px auto;
     padding: 40px 24px 32px 24px;
@@ -9,9 +65,9 @@
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: var(--font-size-h1);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 36px;
     text-align: center;
 }
@@ -44,9 +100,9 @@
 }
 
 .card {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 14px;
-    box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.07);
+    box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.07); /* Consider using a variable for shadow color if needed */
     padding: 32px 22px 28px 22px;
     display: flex;
     flex-direction: column;
@@ -77,26 +133,26 @@
 
 .btn-main {
     display: inline-block;
-    background: #388e3c;
-    color: #fff;
+    background: var(--color-primary);
+    color: var(--color-white);
     font-weight: 600;
     padding: 12px 32px;
     border-radius: 24px;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     box-shadow: 0 2px 8px 0 rgba(56, 142, 60, 0.10);
     transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
 .btn-main:hover {
-    background: #2e7031;
-    color: #fffde7;
+    background: var(--color-secondary);
+    color: var(--color-light-blue);
     transform: translateY(-2px) scale(1.04);
 }
 
 /* --- Upgrade Process Timeline (layout_02.png style) --- */
 .page-upgrade-section {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 16px;
     max-width: 900px;
     margin: 48px auto 48px auto;
@@ -105,9 +161,9 @@
 }
 
 .page-upgrade-title {
-    font-size: 2rem;
+    /* font-size: var(--font-size-h2); */
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 36px;
     text-align: center;
 }
@@ -131,7 +187,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #35C0ED 0%, #b86cff 100%);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-purple) 100%);
     border: 3px solid #fff;
     box-shadow: 0 0 12px 0 #1de1fc55;
     margin-right: 32px;
@@ -142,10 +198,10 @@
 }
 
 .page-upgrade-step-content {
-    background: #f7fafd;
+    background: var(--color-grey-bg);
     border-radius: 10px;
-    border-bottom: 2px solid #35C0ED;
-    border-right: 4px solid #35C0ED;
+    border-bottom: 2px solid var(--color-accent);
+    border-right: 4px solid var(--color-accent);
     box-shadow: 0 1px 8px 0 rgba(8, 55, 107, 0.04);
     padding: 18px 24px 14px 24px;
     margin-bottom: 18px;
@@ -154,15 +210,15 @@
 }
 
 .page-upgrade-step-title {
-    font-size: 1.15rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
-    color: #35C0ED;
+    color: var(--color-accent);
     margin-bottom: 6px;
 }
 
 .page-upgrade-step-desc {
-    font-size: 1.01rem;
-    color: #1a3556;
+    font-size: var(--font-size-base);
+    color: var(--color-dark-blue);
 }
 
 .page-upgrade-step:not(:last-child)::after {
@@ -185,14 +241,16 @@
         padding: 10px 8px 8px 8px;
     }
 
-    .page-upgrade-title {
-        font-size: 1.1rem;
+        /* font-size removed, now handled by .page-upgrade-title */
     }
-}
+    .page-upgrade-title {
+        /* font-size: var(--font-size-h4); */
+    }
+
 
 /* --- Installation Services Grid (layout_03 style) --- */
 .page-install-section {
-    background: #f7fafd;
+    background: var(--color-grey-bg);
     border-radius: 16px;
     max-width: 1200px;
     margin: 48px auto 48px auto;
@@ -201,7 +259,7 @@
 }
 
 .page-install-title {
-    font-size: 2rem;
+    font-size: var(--font-size-h2);
     font-weight: 700;
     color: #08376B;
     margin-bottom: 36px;
@@ -217,7 +275,7 @@
 }
 
 .page-install-card {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 14px;
     box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.07);
     padding: 32px 22px 28px 22px;
@@ -234,16 +292,16 @@
 }
 
 .page-install-card-title {
-    font-size: 1.15rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 10px;
     text-align: left;
 }
 
 .page-install-card-desc {
-    font-size: 1.01rem;
-    color: #1a3556;
+    font-size: var(--font-size-base);
+    color: var(--color-dark-blue);
     text-align: left;
 }
 
@@ -252,30 +310,34 @@
         padding: 28px 4vw 18px 4vw;
     }
 
+        /* font-size removed, now handled by .page-install-title */
+    }
     .page-install-title {
-        font-size: 1.3rem;
+        font-size: var(--font-size-h3);
     }
 
     .page-install-card {
         min-height: 120px;
         padding: 18px 8px 18px 8px;
     }
-}
+
 
 @media (max-width: 600px) {
     .page-install-section {
         padding: 14px 2vw 8px 2vw;
     }
 
+        /* font-size removed, now handled by .page-install-title */
+    }
     .page-install-title {
-        font-size: 1.1rem;
+        font-size: var(--font-size-h4);
     }
 
     .page-install-card {
         min-height: 80px;
         padding: 10px 4px 10px 4px;
     }
-}
+
 
 /* --- What We Offer Section (layout_01.png style) --- */
 .page-offer-section.layout-01-style {
@@ -285,7 +347,7 @@
     margin: 48px auto 48px auto;
     padding: 48px 24px 36px 24px;
     box-shadow: 0 2px 32px 0 rgba(8, 55, 107, 0.18);
-    color: #fff;
+    color: var(--color-white);
     position: relative;
     overflow: visible;
 }
@@ -319,10 +381,10 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #0a0c1b 60%, #1a1d3a 100%);
+    background: linear-gradient(135deg, #0a0c1b 60%, #1a1d3a 100%); /* Not in palette, left as is */
     border: 2.5px solid #1de1fc;
     color: #fff;
-    font-size: 1.08rem;
+    font-size: var(--font-size-sm);
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -337,23 +399,23 @@
 }
 
 .page-offer-step-circle.step1 {
-    border-color: #b86cff;
+    border-color: var(--color-purple);
 }
 
 .page-offer-step-circle.step2 {
-    border-color: #ff4f8b;
+    border-color: var(--color-pink);
 }
 
 .page-offer-step-circle.step3 {
-    border-color: #1de1fc;
+    border-color: var(--color-accent);
 }
 
 .page-offer-step-circle.step4 {
-    border-color: #ff4f8b;
+    border-color: var(--color-pink);
 }
 
 .page-offer-step-circle.step5 {
-    border-color: #1de1fc;
+    border-color: var(--color-accent);
 }
 
 .page-offer-step-line {
@@ -377,7 +439,7 @@
 }
 
 .page-offer-detail-title {
-    font-size: 1.35rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
     margin-bottom: 8px;
     letter-spacing: 0.01em;
@@ -386,28 +448,28 @@
 }
 
 .page-offer-detail-title.step1 {
-    color: #b86cff;
+    color: var(--color-purple);
 }
 
 .page-offer-detail-title.step2 {
-    color: #ff4f8b;
+    color: var(--color-pink);
 }
 
 .page-offer-detail-title.step3 {
-    color: #1de1fc;
+    color: var(--color-accent);
 }
 
 .page-offer-detail-title.step4 {
-    color: #ff4f8b;
+    color: var(--color-pink);
 }
 
 .page-offer-detail-title.step5 {
-    color: #1de1fc;
+    color: var(--color-accent);
 }
 
 .page-offer-detail-desc {
-    font-size: 1.05rem;
-    color: #e0e0e0;
+    font-size: var(--font-size-base);
+    color: #e0e0e0; /* Not in palette, left as is */
     margin-bottom: 0;
     line-height: 1.6;
 }
@@ -457,7 +519,7 @@
 
 /* --- What We Offer Section (layout_01.png style) --- */
 .page-offer-section {
-    background: #f7fafd;
+    background: var(--color-grey-bg);
     border-radius: 12px;
     max-width: 1200px;
     margin: 0 auto 48px auto;
@@ -467,9 +529,9 @@
 }
 
 .page-offer-title {
-    font-size: 2rem;
+    font-size: var(--font-size-h2);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 32px;
     letter-spacing: 0.01em;
 }
@@ -483,7 +545,7 @@
 }
 
 .page-offer-card {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 14px;
     box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.07);
     padding: 32px 22px 28px 22px;
@@ -510,16 +572,16 @@
 }
 
 .page-offer-card-title {
-    font-size: 1.15rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 10px;
     text-align: center;
 }
 
 .page-offer-card-desc {
-    font-size: 1.01rem;
-    color: #1a3556;
+    font-size: var(--font-size-base);
+    color: var(--color-dark-blue);
     text-align: center;
 }
 
@@ -556,7 +618,7 @@
 /* --- Interactive Timeline & Accordion for Oracle UA Custom Dev --- */
 .page-timeline {
 
-    background: #fafdff;
+    background: var(--color-grey-bg2);
     border-radius: 12px;
     box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.06);
     padding: 32px 0px 18px 0px;
@@ -582,8 +644,8 @@
 
 .page-timeline-step .page-timeline-icon {
     font-size: 2rem;
-    color: #2196f3;
-    background: #eaf4fb;
+    color: var(--color-blue-accent);
+    background: var(--color-blue-bg);
     border-radius: 50%;
     padding: 12px;
     margin-bottom: 6px;
@@ -591,19 +653,19 @@
 }
 
 .page-timeline-step.active .page-timeline-icon {
-    background: #2196f3;
-    color: #fff;
+    background: var(--color-blue-accent);
+    color: var(--color-white);
 }
 
 .page-timeline-label {
-    font-size: 1.05rem;
+    font-size: var(--font-size-base);
     font-weight: 600;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 2px;
 }
 
 .page-timeline-step.active .page-timeline-label {
-    color: #2196f3;
+    color: var(--color-blue-accent);
 }
 
 .page-timeline-arrow {
@@ -620,7 +682,7 @@
 
 .page-timeline-detail {
     display: none;
-    background: #fff;
+    background: var(--color-white);
     border-radius: 8px;
     box-shadow: 0 1px 8px 0 rgba(8, 55, 107, 0.05);
     padding: 18px 24px;
@@ -635,22 +697,22 @@
 }
 
 .page-timeline-detail h5 {
-    font-size: 1.1rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 6px;
 }
 
 .page-timeline-detail p {
-    font-size: 1rem;
-    color: #1a3556;
+    font-size: var(--font-size-base);
+    color: var(--color-dark-blue);
     margin: 0;
 }
 
 .page-accordion {
     max-width: 900px;
     margin: 0 auto 36px auto;
-    background: #fafdff;
+    background: var(--color-grey-bg2);
     border-radius: 12px;
     box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.06);
     padding: 18px 18px 8px 18px;
@@ -665,21 +727,21 @@
     align-items: center;
     cursor: pointer;
     padding: 14px 0;
-    font-size: 1.08rem;
+    font-size: var(--font-size-h3);
     font-weight: 600;
-    color: #08376B;
+    color: var(--color-secondary);
     transition: color 0.2s;
 }
 
 .page-accordion-header:hover {
-    color: #2196f3;
+    color: var(--color-blue-accent);
 }
 
 .page-accordion-body {
     display: none;
     padding: 0 0 14px 38px;
-    font-size: 0.98rem;
-    color: #1a3556;
+    font-size: var(--font-size-base);
+    color: var(--color-dark-blue);
     background: none;
 }
 
@@ -688,19 +750,19 @@
 }
 
 .page-custdev-install-icon {
-    font-size: 1.3rem;
-    color: #2196f3;
+    font-size: var(--font-size-h4);
+    color: var(--color-blue-accent);
     margin-right: 12px;
 }
 
 .page-custdev-install-label {
     font-weight: 600;
-    color: #08376B;
+    color: var(--color-secondary);
 }
 
 .page-custdev-install-desc {
-    font-size: 0.97rem;
-    color: #1a3556;
+    font-size: var(--font-size-sm);
+    color: var(--color-dark-blue);
 }
 
 @media (max-width: 900px) {
@@ -721,7 +783,7 @@
 
     .page-timeline-label,
     .page-custdev-install-label {
-        font-size: 0.97rem;
+        font-size: var(--font-size-sm);
     }
 
     .page-timeline-step {
@@ -729,19 +791,19 @@
     }
 
     .page-timeline-detail {
-        font-size: 0.97rem;
+        font-size: var(--font-size-sm);
         padding: 8px 4px;
     }
 
     .page-accordion-header {
-        font-size: 0.97rem;
+        font-size: var(--font-size-sm);
         padding: 10px 0;
     }
 }
 
 /* --- ICS for Custom Development Section (oracle1.png) --- */
 .page-custdev-section {
-    background-image: url(/images/light_bl_bg.jpg);
+    background-image: url(/images/light_bl_bg.jpg); /* Not in palette, left as is */
     border-radius: 0 0 12px 12px;
     /* max-width: 1200px; */
     margin: 0 auto 48px auto;
@@ -751,16 +813,16 @@
 }
 
 .page-custdev-title {
-    font-size: 2rem;
+    font-size: var(--font-size-h2);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 8px;
     letter-spacing: 0.01em;
 }
 
 .page-custdev-subtitle {
-    font-size: 1.1rem;
-    color: #1a3556;
+    font-size: var(--font-size-h3);
+    color: var(--color-dark-blue);
     margin-bottom: 32px;
 }
 
@@ -773,7 +835,7 @@
 }
 
 .page-custdev-card {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 12px;
     box-shadow: 0 2px 12px 0 rgba(8, 55, 107, 0.07);
     padding: 28px 18px 22px 18px;
@@ -788,20 +850,20 @@
 
 .page-custdev-icon {
     font-size: 2.2rem;
-    color: #35C0ED;
+    color: var(--color-accent);
     margin-bottom: 12px;
 }
 
 .page-custdev-card-title {
-    font-size: 1.1rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 7px;
 }
 
 .page-custdev-card-desc {
-    font-size: 0.98rem;
-    color: #08376B;
+    font-size: var(--font-size-base);
+    color: var(--color-secondary);
 }
 
 .page-custdev-upgrades {
@@ -809,9 +871,9 @@
 }
 
 .page-custdev-upgrades-title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h2);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 18px;
     letter-spacing: 0.01em;
 }
@@ -825,7 +887,7 @@
 }
 
 .page-custdev-upgrade-step {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 10px;
     box-shadow: 0 1px 8px 0 rgba(8, 55, 107, 0.06);
     padding: 18px 16px 12px 16px;
@@ -840,26 +902,26 @@
 
 .page-custdev-upgrade-icon {
     font-size: 2rem;
-    color: #2196f3;
+    color: var(--color-blue-accent);
     margin-bottom: 8px;
 }
 
 .page-custdev-upgrade-label {
-    font-size: 1.08rem;
+    font-size: var(--font-size-h4);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     /* margin-bottom: 5px; */
 }
 
 .page-custdev-upgrade-desc {
-    font-size: 0.97rem;
-    color: #08376B;
+    font-size: var(--font-size-base);
+    color: var(--color-secondary);
 }
 
 .page-custdev-install-title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h2);
     font-weight: 700;
-    color: #08376B;
+    color: var(--color-secondary);
     margin-bottom: 18px;
     letter-spacing: 0.01em;
 }
@@ -872,7 +934,7 @@
 }
 
 .page-custdev-install-card {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 10px;
     box-shadow: 0 1px 8px 0 rgba(8, 55, 107, 0.06);
     padding: 18px 14px 12px 14px;
@@ -892,14 +954,14 @@
 }
 
 .page-custdev-install-label {
-    font-size: 1.08rem;
+    font-size: var(--font-size-h4);
     font-weight: 700;
     color: #08376B;
     margin-bottom: 5px;
 }
 
 .page-custdev-install-desc {
-    font-size: 0.97rem;
+    font-size: var(--font-size-base);
     color: #1a3556;
 }
 
@@ -935,9 +997,94 @@
 
 /* --- Oracle Unified Assurance Services Section Styles --- */
 
+/* === ICS Accordion Component === */
+.ics-accordion-section {
+  margin: 48px auto;
+  max-width: 1200px;
+  background: var(--color-white);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(8, 55, 107, 0.08);
+  padding: 32px 20px 32px 20px;
+}
+.ics-accordion-title {
+  font-size: var(--font-size-h2);
+  color: var(--color-secondary);
+  margin-bottom: 18px;
+  font-weight: 700;
+  text-align: left;
+}
+.ics-accordion {
+  border-radius: 12px;
+  background: var(--color-grey-bg3);
+  margin-bottom: 32px;
+  box-shadow: 0 1px 6px 0 rgba(8, 55, 107, 0.04);
+}
+.ics-accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 18px 18px 18px 0;
+  font-size: var(--font-size-h4);
+  color: var(--color-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 1px solid var(--color-grey-bg4);
+  position: relative;
+}
+.ics-accordion-header[aria-expanded="true"] {
+  color: var(--color-accent);
+  background: var(--color-grey-bg2);
+}
+.ics-accordion-header::after {
+  content: '\2B9F';
+  float: right;
+  font-size: var(--font-size-base);
+  transition: transform 0.2s;
+}
+.ics-accordion-header[aria-expanded="true"]::after {
+  transform: rotate(-180deg);
+}
+.ics-accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--color-grey-bg2);
+  transition: max-height 0.3s cubic-bezier(0.4,0,0.2,1);
+  font-size: var(--font-size-base);
+  color: var(--color-dark-blue);
+  padding: 0 0;
+}
+.ics-accordion-panel[aria-hidden="false"] {
+  padding: 16px 0 16px 0;
+  max-height: 500px;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.ics-accordion-panel p {
+  margin: 0;
+  font-size: var(--font-size-base);
+}
+@media (max-width: 600px) {
+  .ics-accordion-section {
+    padding: 12px 2vw 12px 2vw;
+  }
+  .ics-accordion-title {
+    font-size: var(--font-size-h3);
+  }
+  .ics-accordion-header {
+    font-size: var(--font-size-base);
+    padding: 14px 10px 14px 0;
+  }
+  .ics-accordion-panel[aria-hidden="false"] {
+    padding: 10px 0 10px 0;
+  }
+}
+
 
 .page-main {
-    margin-top: 20px;
+    /* background-color: var(--color-primary); */
+    padding-top: 20px;
 }
 
 .page-about-row {
@@ -955,27 +1102,27 @@
 }
 
 .page-about-main h3 {
-    font-size: 1.3rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
     margin-bottom: 8px;
-    color: #222;
+    color: #222; /* Not in palette, left as is */
 }
 
 .page-about-main p {
-    font-size: 1.05rem;
-    color: #333;
+    font-size: var(--font-size-base);
+    color: #333; /* Not in palette, left as is */
     margin-bottom: 18px;
 }
 
 .page-why h4 {
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
     font-weight: 700;
     margin-bottom: 8px;
-    color: #222;
+    color: #222; /* Not in palette, left as is */
 }
 
 .page-why ul {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     gap: 18px 32px;
     padding: 0;
@@ -984,8 +1131,8 @@
 }
 
 .page-why li {
-    font-size: 1rem;
-    color: #222;
+    font-size: var(--font-size-base);
+    color: #222; /* Not in palette, left as is */
     display: flex;
     align-items: center;
     gap: 6px;
@@ -994,12 +1141,12 @@
 .page-icon {
     padding: 0px 30px 0 20px;
     font-size: 1.1em;
-    color: #222;
+    color: #222; /* Not in palette, left as is */
 }
 
 .page-dot {
     font-size: 1.2em;
-    color: #222;
+    color: #222; /* Not in palette, left as is */
     margin: 0 4px;
 }
 
@@ -1011,7 +1158,7 @@
 }
 
 .page-card {
-    background: #f6fbfe;
+    background: var(--color-grey-bg3);
     border-radius: 8px;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.04);
     padding: 18px 16px 14px 16px;
@@ -1021,28 +1168,28 @@
 
 .page-card:hover {
 
-    background-color: #35c0Ed;
+    background-color: var(--color-accent);
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
     transform: translateY(-2px);
     transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .page-card h5 {
-    font-size: 1.05rem;
+    font-size: var(--font-size-base);
     font-weight: 700;
     margin-bottom: 7px;
-    color: #222;
+    color: #222; /* Not in palette, left as is */
     letter-spacing: 0.01em;
 }
 
 .page-card p {
     font-size: 0.97rem;
-    color: #444;
+    color: #444; /* Not in palette, left as is */
     margin: 0;
 }
 
 .page-devcap-row {
-    background: #f3f3f4;
+    background: var(--color-grey-bg4);
     border-radius: 8px;
     max-width: 1200px;
     margin: 0 auto 32px auto;
@@ -1064,7 +1211,7 @@
 
 .page-tab {
     font-size: 1rem;
-    color: #888;
+    color: #888; /* Not in palette, left as is */
     background: none;
     border: none;
     padding: 8px 18px;
@@ -1075,13 +1222,13 @@
 }
 
 .page-tab-active {
-    background: #fff;
-    color: #222;
-    border-bottom: 2px solid #222;
+    background: var(--color-white);
+    color: #222; /* Not in palette, left as is */
+    border-bottom: 2px solid #222; /* Not in palette, left as is */
 }
 
 .page-tab-content {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 0 0 8px 8px;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.04);
     padding: 18px 18px 12px 18px;
@@ -1091,12 +1238,12 @@
     font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 6px;
-    color: #222;
+    color: #222; /* Not in palette, left as is */
 }
 
 .page-tab-desc {
     font-size: 0.97rem;
-    color: #444;
+    color: #444; /* Not in palette, left as is */
 }
 
 .page-cta-row {
@@ -1108,7 +1255,7 @@
 .page-cta-row h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #222;
+    color: #222; /* Not in palette, left as is */
     letter-spacing: 0.01em;
 }
 
@@ -1195,7 +1342,7 @@
     align-items: stretch;
     width: 100%;
     min-height: 320px;
-    background-color: linear-gradient(135deg, #08376B 0%, #87ceeb 100%) !important;
+    background-color: linear-gradient(135deg, var(--color-secondary) 0%, #87ceeb 100%) !important; /* #87ceeb not in palette */
 
 
 }
@@ -1226,14 +1373,14 @@
 
 .page-hire-banner-content {
     flex: 1 1 0;
-    background: #fff;
+    background: var(--color-white);
     /* border-top-right-radius: 22px;
   border-bottom-right-radius: 22px; */
     padding: 40px 48px 40px 36px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #08376B;
+    color: var(--color-secondary);
     box-shadow: none;
 }
 
@@ -1241,13 +1388,13 @@
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 12px;
-    color: #08376B;
+    color: var(--color-secondary);
 }
 
 .page-hire-banner-content p {
     font-size: 1.15rem;
     margin-bottom: 18px;
-    color: #1a3556;
+    color: var(--color-dark-blue);
 }
 
 .page-hire-banner-content ul {
@@ -1258,7 +1405,7 @@
 .page-hire-banner-content ul li {
     font-size: 1.05rem;
     margin-bottom: 7px;
-    color: #08376B;
+    color: var(--color-secondary);
     list-style: disc inside;
 }
 
@@ -1270,8 +1417,8 @@
 .btn-hire {
     text-align: center;
     display: inline-block;
-    background: #08376B;
-    color: #fff;
+    background: var(--color-secondary);
+    color: var(--color-white);
     font-weight: 600;
     font-size: 1.1rem;
     padding: 13px 36px;
@@ -1285,8 +1432,8 @@
 }
 
 .btn-hire:hover {
-    background: #87ceeb;
-    color: #08376B;
+    background: #87ceeb; /* Not in palette, left as is */
+    color: var(--color-secondary);
     box-shadow: 0 6px 24px 0 rgba(8, 55, 107, 0.18);
 }
 
@@ -1334,9 +1481,9 @@
 
 /* --- Full Stack Development Page Modern Styles --- */
 .page-techstack-section {
-    background-color: #2f90B0;
+    background-color: var(--color-primary);
     /* background: linear-gradient(135deg, #87ceeb 0%, #87ceeb 100%); */
-    color: #fff;
+    color: var(--color-white);
     border-radius: 18px 18px 0px 0px;
 
     box-shadow: 0 4px 24px 0 rgba(8, 55, 107, 0.08);
@@ -1344,10 +1491,10 @@
 }
 
 .page-techstack-title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-h1);
     font-weight: 700;
     margin-bottom: 18px;
-    color: #08376B;
+    color: var(--color-secondary);
     letter-spacing: 1px;
     text-align: center;
 }
@@ -1369,7 +1516,7 @@
 
 .page-cta-action:hover {
     background: #08376B;
-    color: #fff;
+    color: var(--color-white);
 }
 
 
@@ -1392,7 +1539,7 @@
 .page-techstack-row {
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: var(--color-white);
     /* background: rgba(255, 255, 255, 0.08); */
     border-radius: 12px;
     padding: 0px 10px;
@@ -1502,21 +1649,7 @@ body {
 
 section.section {
     padding: 45px 0;
-}
-
-section.section.gray {
-    /* background-color: #f4f4f4; */
-}
-
-section.section.lightgray {
-    /* background-color: #fafafa; */
-}
-
-section.section.lightblue {
-    /* margin:  0px 20px; */
-    /* background-color: #ECF3FE; */
     /* background: linear-gradient(to bottom, #ECF3FE, #74aeff); */
-
 }
 
 section.section h1.title {
@@ -2119,7 +2252,7 @@ footer p span {
     justify-content: space-between;
     align-items: flex-start;
     gap: 0;
-    padding-bottom: 32px;
+    /* padding-bottom: 32px; */
 }
 
 .footer-col {
@@ -2189,7 +2322,8 @@ footer p span {
 
 .footer-address-group {
     display: flex;
-    gap: 48px;
+    justify-content: space-between;
+    /* gap: 48px; */
     flex-wrap: nowrap;
 }
 
@@ -2207,10 +2341,20 @@ footer p span {
     vertical-align: middle;
 }
 
+/* Style all phone icons inside footer-icon */
+.footer-address-group .footer-icon i.fa-phone,.footer-address-group .footer-icon i.fa-envelope {
+    color: #2f90B0;  /* Your blue shade */
+}
+
+
+
+
+
 .footer-office {
     color: #1E6091;
     font-weight: 700;
     font-size: 1.01rem;
+    padding-left: 5px;
 }
 
 .footer-contact {
@@ -2246,7 +2390,7 @@ footer p span {
     justify-content: space-between;
     align-items: center;
     gap: 0;
-    padding: 32px 0 0 0;
+    /* padding: 32px 0 0 0; */
 }
 
 .footer-links {
@@ -2316,7 +2460,7 @@ footer p span {
     color: #222;
     font-size: 1.01rem;
     /* margin: 24px 0 0 0; */
-    padding-bottom: 24px;
+    padding:    0px 0px 40px 15px;
     text-align: left;
     letter-spacing: 0.01em;
 }
@@ -4016,7 +4160,7 @@ nav .wrapper.hover .language-wrapper #divider {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/images/app_development1.jpg') center/cover no-repeat;
+    /* background: url('/images/app_development1.jpg') center/cover no-repeat; */
     filter: brightness(0.55) grayscale(0.08) blur(1.2px);
     z-index: 1;
     opacity: 0.92;
@@ -4067,7 +4211,7 @@ nav .wrapper.hover .language-wrapper #divider {
 .page-services-container {
     display: flex;
     background: #fff;
-    border-radius: 32px;
+    /* border-radius: 32px; */
     box-shadow: 0 8px 40px rgba(8, 55, 107, 0.13);
     overflow: visible;
     min-height: 340px;
@@ -4080,7 +4224,7 @@ nav .wrapper.hover .language-wrapper #divider {
 .page-services-list {
     flex: 1 1 260px;
     /* background: linear-gradient(120deg, #eaf4fd 60%, #87ceeb 100%); */
-    padding: 48px 0 48px 0;
+    padding: 28px 0 28px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -4142,7 +4286,7 @@ nav .wrapper.hover .language-wrapper #divider {
 .page-service-panel {
     flex: 2 1 500px;
 
-    padding: 48px 48px 48px 48px;
+    padding: 28px 48px 48px 48px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -4185,6 +4329,9 @@ nav .wrapper.hover .language-wrapper #divider {
     font-weight: 800;
     /* color: #08376B; */
     margin-bottom: 12px;
+}
+.page-panel-info h3 b{
+    color: green;
 }
 
 .page-panel-info p {
