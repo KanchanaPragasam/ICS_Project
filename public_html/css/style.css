@@ -1,3 +1,261 @@
+/* === Full Stack Development Landing Page Custom Styles === */
+.fsd-bg-section {
+  width: 100vw;
+  min-height: 320px;
+  background: url('/images/app_development1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  margin-top: 0;
+  z-index: 1;
+}
+.fsd-bg-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(44,74,123,0.32);
+  z-index: 2;
+}
+.fsd-bg-content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  padding: 48px 16px 56px 16px;
+  width: 100%;
+  max-width: 900px;
+}
+.fsd-bg-content h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+.fsd-bg-content p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.92;
+}
+
+.fsd-dev-section {
+  background: #EAF4FD;
+  padding: 48px 0 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+.fsd-dev-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(44,74,123,0.07);
+  padding: 32px 28px;
+  min-width: 220px;
+  max-width: 320px;
+  flex: 1 1 260px;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
+  position: relative;
+}
+.fsd-dev-card:hover {
+  box-shadow: 0 8px 32px rgba(44,74,123,0.13);
+  border-color: #2C4A7B;
+  background: #f7fbff;
+}
+.fsd-dev-card.selected {
+  border-color: #2C4A7B;
+  background: #eaf4fd;
+}
+.fsd-dev-card .fsd-dev-icon {
+  font-size: 2.5rem;
+  color: #2C4A7B;
+  margin-bottom: 18px;
+}
+.fsd-dev-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2C4A7B;
+  margin-bottom: 10px;
+}
+.fsd-dev-card p {
+  font-size: 1.05rem;
+  color: #222;
+  opacity: 0.95;
+  text-align: center;
+}
+
+/* Hiring Banner Card */
+.fsd-hiring-banner {
+  background: linear-gradient(90deg, #2C4A7B 0%, #4e7ac7 100%);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(44,74,123,0.10);
+  margin: 32px auto 32px auto;
+  max-width: 900px;
+  padding: 32px 24px 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.fsd-hiring-banner .fsd-hiring-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex: 1 1 300px;
+}
+.fsd-hiring-banner .fsd-hiring-btn {
+  background: #fff;
+  color: #2C4A7B;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 12px 32px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44,74,123,0.10);
+  transition: background 0.18s, color 0.18s;
+}
+.fsd-hiring-banner .fsd-hiring-btn:hover {
+  background: #2C4A7B;
+  color: #fff;
+}
+
+/* Full Stack Development Process Section */
+.fsd-process-section {
+  background: #EAF4FD;
+  padding: 56px 0 48px 0;
+}
+.fsd-process-title {
+  text-align: center;
+  color: #2C4A7B;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+.fsd-process-timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.fsd-process-step {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(44,74,123,0.07);
+  padding: 32px 24px;
+  min-width: 180px;
+  max-width: 220px;
+  flex: 1 1 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 24px;
+  border-left: 6px solid #2C4A7B;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.fsd-process-step .fsd-step-icon {
+  font-size: 2rem;
+  color: #2C4A7B;
+  margin-bottom: 12px;
+}
+.fsd-process-step .fsd-step-title {
+  font-size: 1.13rem;
+  font-weight: 700;
+  color: #2C4A7B;
+  margin-bottom: 6px;
+}
+.fsd-process-step .fsd-step-desc {
+  font-size: 1.01rem;
+  color: #222;
+  opacity: 0.95;
+}
+.fsd-process-step:nth-child(even) {
+  border-left: none;
+  border-right: 6px solid #2C4A7B;
+  align-items: flex-end;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .fsd-process-timeline {
+    max-width: 98vw;
+  }
+  .fsd-dev-section {
+    gap: 18px;
+  }
+}
+@media (max-width: 900px) {
+  .fsd-process-timeline {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .fsd-process-step {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    border-left: 6px solid #2C4A7B;
+    border-right: none !important;
+    align-items: flex-start !important;
+  }
+  .fsd-process-step:nth-child(even) {
+    border-left: 6px solid #2C4A7B;
+    border-right: none;
+    align-items: flex-start;
+  }
+  .fsd-dev-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .fsd-bg-content h1 {
+    font-size: 1.5rem;
+  }
+  .fsd-bg-content p {
+    font-size: 1rem;
+  }
+  .fsd-dev-card {
+    padding: 18px 8px;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .fsd-hiring-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 8px;
+    gap: 12px;
+  }
+  .fsd-hiring-banner .fsd-hiring-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+  .fsd-process-title {
+    font-size: 1.1rem;
+  }
+  .fsd-process-step {
+    padding: 18px 8px;
+  }
+}
+/* Prevent horizontal scroll for landing page only */
+.fsd-bg-section,
+.fsd-dev-section,
+.fsd-hiring-banner,
+.fsd-process-section {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 @import url('fonts/fonts.css');
 @import url('fonts/all.css');
 @import url('animate.css');
